@@ -1,0 +1,1 @@
+/home/V/.emacs.d/straight/repos/spacious-padding/.github/PULL_REQUEST_TEMPLATE.md

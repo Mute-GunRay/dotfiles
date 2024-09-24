@@ -1,0 +1,1 @@
+/home/V/.emacs.d/straight/repos/marginalia/marginalia.el

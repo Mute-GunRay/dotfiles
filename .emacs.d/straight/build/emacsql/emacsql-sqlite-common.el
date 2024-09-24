@@ -1,0 +1,1 @@
+/home/V/.emacs.d/straight/repos/emacsql/emacsql-sqlite-common.el

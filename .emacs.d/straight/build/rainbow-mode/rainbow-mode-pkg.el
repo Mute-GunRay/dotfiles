@@ -1,0 +1,1 @@
+/home/V/.emacs.d/straight/repos/rainbow-mode/rainbow-mode-pkg.el
