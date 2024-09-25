@@ -70,6 +70,9 @@ using General.el for its use-package integrations to allow for more clearly defi
   (general-define-key
    "C-k" 'scroll-up-line
    "C-l" 'scroll-down-line)
+
+  (general-define-key
+   "C-o c" org-capture)
 #+end_src
 
 * Graphical
@@ -261,6 +264,13 @@ Uncatagorized packages and configurations
 
 ** org-capture
 #+begin_src emacs-lisp
+  (setq org-capture-templates
+	'(("j" "Job" entry (here)
+	   "*%^{Job} [#%{Priority | A | B | C}] %^g \n%?")
+	  ("t" "Task" checkitem (here)
+	   "%^{Task} %^g \n%?")
+	  ("r" "Reminder" plain (here)
+	   "%^{What needs to be remembered} %^G %T")))
 #+end_src
 
 ** org-agenda
