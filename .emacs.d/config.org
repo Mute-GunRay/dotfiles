@@ -70,9 +70,6 @@ using General.el for its use-package integrations to allow for more clearly defi
   (general-define-key
    "C-k" 'scroll-up-line
    "C-l" 'scroll-down-line)
-
-  (general-define-key
-   "C-o c" org-capture)
 #+end_src
 
 * Graphical
@@ -265,12 +262,29 @@ Uncatagorized packages and configurations
 ** org-capture
 #+begin_src emacs-lisp
   (setq org-capture-templates
-	'(("j" "Job" entry (here)
-	   "*%^{Job} [#%{Priority | A | B | C}] %^g \n%?")
-	  ("t" "Task" checkitem (here)
-	   "%^{Task} %^g \n%?")
-	  ("r" "Reminder" plain (here)
-	   "%^{What needs to be remembered} %^G %T")))
+	'(("t" "Task" entry
+	  (file buffer-name)
+	  "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
+	  ("s" "Sub Task" checkitem
+	   (file buffer-name)
+	   "%^{ TASK }")
+	  ("i" "Idea")
+	  ("ib" "Blog Post" entry
+	   (file buffer-name)
+	   "* %^{ IDEA } %^g")
+	  ("ig" "Game" entry
+	   (file buffer-name)
+	   "* %^{ IDEA } %^g")
+	  ("is" "Script" entry
+	   (file buffer-name)
+	   "*%^{ IDEA } %^g")
+	  ("b" "Blog Posts")
+	  ("bt" "Title" entry
+	   (file buffer-name)
+	   "* %^{ TITLE } %^g")
+	  ("bs" "Section" entry
+	   (file buffer-name)
+	   "** %^{ TITLE } \n %^?")))
 #+end_src
 
 ** org-agenda

@@ -179,6 +179,9 @@ apps are not started from a shell."
 (setq denote-directory (expand-file-name "~/Documents"))
 (setq denote-prompts '(subdirectory title keywords))
 
-
+(setq org-capture-templates
+      '(("d" "Demo" entry
+	(file buffer-name)
+	"* This is a test heading")))
 
 
