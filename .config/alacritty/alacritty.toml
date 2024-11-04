@@ -1,0 +1,31 @@
+[general]
+import  =  []
+working_directory  =  "None"
+live_config_reload = true
+ipc_socket = true
+[env]
+[window]
+[scrolling]
+history = 10000
+multiplier = 1
+[font]
+normal = { family =  "NovaMono", style = "Regular" }
+bold = { family = "NovaMono", style = "Bold" }
+italic = { family = "NovaMono", style = "Italic" }
+bold_italic = { family = "NovaMono", style = "Bold Italic" }
+size = 14
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+builtin_box_drawing = true
+[colors]
+[colors.primary]
+foreground = "#44d9e8"
+background = "#1a0933"
+[cursor]
+style = { shape = "Underline", blinking = "On"}
+blink_interval = 500
+blink_timeout = 0
+unfocused_hollow = true
+thickness = 0.25
+[mouse]
+hide_when_typing = true

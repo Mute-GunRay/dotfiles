@@ -180,8 +180,28 @@ apps are not started from a shell."
 (setq denote-prompts '(subdirectory title keywords))
 
 (setq org-capture-templates
-      '(("d" "Demo" entry
+      '(("t" "Task" entry
 	(file buffer-name)
-	"* This is a test heading")))
+	"* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
+	("s" "Sub Task" checkitem
+	 (file buffer-name)
+	 "%^{ TASK }")
+	("i" "Idea")
+	("ib" "Blog Post" entry
+	 (file buffer-name)
+	 "* %^{ IDEA } %^g")
+	("ig" "Game" entry
+	 (file buffer-name)
+	 "* %^{ IDEA } %^g")
+	("is" "Script" entry
+	 (file buffer-name)
+	 "*%^{ IDEA } %^g")
+	("b" "Blog Posts")
+	("bt" "Title" entry
+	 (file buffer-name)
+	 "* %^{ TITLE } %^g")
+	("bs" "Section" entry
+	 (file buffer-name)
+	 "** %^{ TITLE } \n %^?")))
 
 
