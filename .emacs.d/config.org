@@ -6,8 +6,8 @@
 * Utilities
 This section should only contain those packages that must be loaded before anything else
 Things like a package manager, keybinding packages, etc.
+
 ** Package Manager
-Currently using straight.el for ease of use, may replace with elpaca at a later date.
 #+begin_src emacs-lisp
   ;; bootstraping straight.el from its github repo
   ;; builtin package.el is disabled via early-init file
@@ -65,7 +65,7 @@ using General.el for its use-package integrations to allow for more clearly defi
 
   (general-define-key
    "C-f f" 'find-file
-   "C-f s" 'save-file)
+   "C-f s" 'save-buffer)
 
   (general-define-key
    "C-k" 'scroll-up-line
@@ -75,6 +75,7 @@ using General.el for its use-package integrations to allow for more clearly defi
 * Graphical
 This section should only contain config options and packages that alter the overall UX of emacs
 This includes changes to faces, and themes
+
 ** Builtin Options
 To create a more streamlined frame and to encourage the use of keybindings 
 #+begin_src emacs-lisp
@@ -159,10 +160,6 @@ Coloring of faces should  be transferred to autothemer themes at a later date
   ;; org tables
   (custom-set-faces
    '(org-table ((t :family "Barlow" :height 120 :foreground "#2A2B2A"))))
-
-
-  (setq buffer-face-mode-face 'fixed-pitch)
-  (add-hook 'prog-mode-hook 'buffer-face-mode)
 #+end_src
 
 ** Org Modern
@@ -171,25 +168,17 @@ This is added for ease of customizing and beautifying org mode documents
   (use-package org-modern
     :straight t
     :hook (org-mode . org-modern-mode))
+
 #+end_src
-** Auto Themer
-This package is added to ease the development of themes and better allow for major mode specific themes
-#+begin_src emacs-lisp
-  (use-package autothemer
-    :straight t)
-#+end_src
+
 ** Themes
 #+begin_src emacs-lisp
   (add-to-list 'custom-theme-load-path  "~/.emacs.d/themes/")
-  (load-theme 'org-paper t)
+  (load-theme 'cyberpunk-2019 t)
 #+end_src
 * Development
 This section should only contain options and packages relevent to building emacs into a featureful IDE
-** Eglot
-This config uses the LSP Mode package instead of the builtin eglot for lsp functionality. This is to side step the issues I have been having getting eglot to recognize the solargraph server
-#+begin_src emacs-lisp
 
-#+end_src
 ** Completion At Point (Corfu)
 For speeding up writing of code, works similarly to intellisense in VSCode
 #+begin_src emacs-lisp
@@ -202,10 +191,20 @@ For speeding up writing of code, works similarly to intellisense in VSCode
     (global-corfu-mode))
 
 #+end_src
-** 
+
+** GDScript Mode
+#+begin_src emacs-lisp
+  (use-package gdscript-mode
+    :straight (gdscript-mode
+	       :type git
+	       :host github
+	       :repo "godotengine/emacs-gdscript-mode")
+    :hook (gdscript-mode . eglot-ensure))
+#+end_src
+
 * Misc
 Uncatagorized packages and configurations
-**clean this up later**
+
 ** Vertico
 #+begin_src emacs-lisp
   (use-package vertico

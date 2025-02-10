@@ -50,7 +50,7 @@ apps are not started from a shell."
 
 (general-define-key
  "C-f f" 'find-file
- "C-f s" 'save-file)
+ "C-f s" 'save-buffer)
 
 (general-define-key
  "C-k" 'scroll-up-line
@@ -120,21 +120,12 @@ apps are not started from a shell."
 (custom-set-faces
  '(org-table ((t :family "Barlow" :height 120 :foreground "#2A2B2A"))))
 
-
-(setq buffer-face-mode-face 'fixed-pitch)
-(add-hook 'prog-mode-hook 'buffer-face-mode)
-
 (use-package org-modern
   :straight t
   :hook (org-mode . org-modern-mode))
 
-(use-package autothemer
-  :straight t)
-
 (add-to-list 'custom-theme-load-path  "~/.emacs.d/themes/")
-(load-theme 'org-paper t)
-
-
+(load-theme 'cyberpunk-2019 t)
 
 (use-package corfu
   :straight t
@@ -143,6 +134,13 @@ apps are not started from a shell."
     (corfu-preview-current t)
   :init
   (global-corfu-mode))
+
+(use-package gdscript-mode
+  :straight (gdscript-mode
+	     :type git
+	     :host github
+	     :repo "godotengine/emacs-gdscript-mode")
+  :hook (gdscript-mode . eglot-ensure))
 
 (use-package vertico
   :straight t

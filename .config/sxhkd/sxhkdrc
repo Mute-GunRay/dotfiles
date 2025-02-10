@@ -4,11 +4,19 @@
 
 # terminal emulator
 super + Return
-	xterm
+	alacritty
 
 # program launcher
 super + @space
 	dmenu_run
+
+# web browser
+super + w
+      floorp
+
+# text editor
+super + e
+      emacsclient -c
 
 # make sxhkd reload its configuration files:
 super + Escape
