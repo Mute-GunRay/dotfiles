@@ -2,19 +2,19 @@
 ;; builtin package.el is disabled via early-init file
 (defvar bootstrap-version)
 (let ((bootstrap-file
-       (expand-file-name
-	"straight/repos/straight.el/bootstrap.el"
-	(or (bound-and-true-p straight-base-dir)
-	    user-emacs-directory)))
-      (bootstrap-version 7))
+	 (expand-file-name
+	  "straight/repos/straight.el/bootstrap.el"
+	  (or (bound-and-true-p straight-base-dir)
+	      user-emacs-directory)))
+	(bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
-	(url-retriev
-	 e-synchronously
-	 "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-	 'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
+	  (url-retriev
+	   e-synchronously
+	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+	   'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
 ;;enables straight.el use-package integration
@@ -28,9 +28,9 @@ This is particularly useful under Mac OS X and macOS, where GUI
 apps are not started from a shell."
   (interactive)
   (let ((path-from-shell (replace-regexp-in-string
-			  "[ \t\n]*$" "" (shell-command-to-string
-					  "$SHELL --login -c 'echo $PATH'"
-						    ))))
+			    "[ \t\n]*$" "" (shell-command-to-string
+					    "$SHELL --login -c 'echo $PATH'"
+						      ))))
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
@@ -98,16 +98,6 @@ apps are not started from a shell."
 (custom-set-faces
  '(variable-pitch ((t :family "Bitter" :height 120 :forground "#2A2B2A"))))
 
-;; org headings
-(custom-set-faces
- '(org-level-1 ((t :family "Bitter" :height 220 :foreground "#2A2B2A"))))
-(custom-set-faces
- '(org-level-2 ((t :family "Bitter" :height 200 :foreground "#995D81"))))
-(custom-set-faces
- '(org-level-3 ((t :family "Bitter" :height 180 :foreground "#EB8258"))))
-(custom-set-faces
- '(org-level-4 ((t :family "Bitter" :height 160 :foreground "#6689A1"))))
-
 ;; org blocks
 (custom-set-faces
  '(org-block-begin-line ((t :family "Beiruti" :height 80 :foreground "#EB8258"))))
@@ -137,9 +127,9 @@ apps are not started from a shell."
 
 (use-package gdscript-mode
   :straight (gdscript-mode
-	     :type git
-	     :host github
-	     :repo "godotengine/emacs-gdscript-mode")
+	       :type git
+	       :host github
+	       :repo "godotengine/emacs-gdscript-mode")
   :hook (gdscript-mode . eglot-ensure))
 
 (use-package vertico
@@ -177,29 +167,55 @@ apps are not started from a shell."
 (setq denote-directory (expand-file-name "~/Documents"))
 (setq denote-prompts '(subdirectory title keywords))
 
+(setq org-todo-keywords '("TODO(t)"  "|" "CANCELLED(c)" "DONE(d)"))
+
 (setq org-capture-templates
-      '(("t" "Task" entry
-	(file buffer-name)
-	"* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
-	("s" "Sub Task" checkitem
-	 (file buffer-name)
-	 "%^{ TASK }")
-	("i" "Idea")
-	("ib" "Blog Post" entry
-	 (file buffer-name)
-	 "* %^{ IDEA } %^g")
-	("ig" "Game" entry
-	 (file buffer-name)
-	 "* %^{ IDEA } %^g")
-	("is" "Script" entry
-	 (file buffer-name)
-	 "*%^{ IDEA } %^g")
-	("b" "Blog Posts")
-	("bt" "Title" entry
-	 (file buffer-name)
-	 "* %^{ TITLE } %^g")
-	("bs" "Section" entry
-	 (file buffer-name)
-	 "** %^{ TITLE } \n %^?")))
+	'(("t" "Task" entry
+	  (file buffer-name)
+	  "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
+	  ("s" "Sub Task" checkitem
+	   (file buffer-name)
+	   "%^{ TASK }")
+	  ("i" "Idea")
+	  ("ib" "Blog Post" entry
+	   (file buffer-name)
+	   "* %^{ IDEA } %^g")
+	  ("ig" "Game" entry
+	   (file buffer-name)
+	   "* %^{ IDEA } %^g")
+	  ("is" "Script" entry
+	   (file buffer-name)
+	   "*%^{ IDEA } %^g")
+	  ("b" "Blog Posts")
+	  ("bt" "Title" entry
+	   (file buffer-name)
+	   "* %^{ TITLE } %^g")
+	  ("bs" "Section" entry
+	   (file buffer-name)
+	   "** %^{ TITLE } \n %^?")))
 
+(require 'org-habit)
+(add-to-list 'org-modules 'org-habit)
+(setq org-habit-graph-column 60)
+(setq org-habit-completed-glyph "+")
+(setq org-habit-following-days 0)
+(setq org-habit-preceding-days 7)
+(setq org-habit-show-done-always-green t)
 
+(setq org-agenda-files '("~/Documents/Agenda/"))
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-custom-commands
+      '(( "t" "Today"
+	  ((agenda "" ((org-agenda-span 'day)))))))
+
+(use-package org-superstar
+  :straight t
+  :after org
+  :hook (org-mode . org-superstar-mode))
+
+(use-package visual-fill-column
+  :straight t
+  :hook (org-mode . visual-fill-column-mode)
+  :custom
+  (visual-fill-column-width 100)
+  (visual-fill-column-center-text t))
