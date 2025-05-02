@@ -21,3 +21,6 @@ eval "$(/home/V/.local/bin/mise activate bash)"
 bind 'TAB:menu-complete'
 bind '"\e[Z":menu-complete-backward'
 LS_COLORS=$LS_COLORS:'di=38;5;207;1;4:ln=38;5;46;3:ex=48;5;226'; export LS_COLORS
+
+# Created by `pipx` on 2025-03-21 15:45:51
+export PATH="$PATH:/home/V/.local/bin"

@@ -1,4 +1,4 @@
-This is org.info, produced by makeinfo version 7.1.1 from org.texi.
+This is org.info, produced by makeinfo version 7.2 from org.texi.
 
 This manual is for Org version 9.8.
 
@@ -2218,7 +2218,6 @@ block for execution, like a reset instruction.  For example, you may use
 
      (add-to-list 'org-babel-default-header-args:gnuplot
                   '((:prologue . "reset")))
-
 
    Likewise, the value of the ‘epilogue’ header argument is for
 appending to the end of the code block for execution.
@@ -7082,7 +7081,7 @@ D Main Index
 * enum, Texinfo attribute:               Plain lists in Texinfo export.
                                                               (line   6)
 * epilogue, header argument:             Environment of a Code Block.
-                                                              (line 372)
+                                                              (line 371)
 * escape character:                      Escape Character.    (line   6)
 * escape syntax, for links:              Link Format.         (line  17)
 * eval, header argument:                 Evaluating Code Blocks.

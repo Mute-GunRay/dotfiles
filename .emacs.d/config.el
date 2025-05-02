@@ -92,23 +92,9 @@ apps are not started from a shell."
 
 ;; defaults
 (custom-set-faces
- '(default ((t :family "Beiruti" :height 180 :forground "#2A2B2A"))))
-(custom-set-faces
- '(fixed-pitch ((t :family "NovaMono" :height 160 :forground "#2A2B2A"))))
+ '(default ((t :family "NovaMono" :height 160 :forground "#2A2B2A"))))
 (custom-set-faces
  '(variable-pitch ((t :family "Bitter" :height 120 :forground "#2A2B2A"))))
-
-;; org blocks
-(custom-set-faces
- '(org-block-begin-line ((t :family "Beiruti" :height 80 :foreground "#EB8258"))))
-(custom-set-faces
- '(org-block-end-line ((t :family "Beiruti" :height 80 :foreground "#EB8258"))))
-(custom-set-faces
- '(org-block ((t :family "NovaMono" :height 120 :foreground "#2A2B2A"))))
-
-;; org tables
-(custom-set-faces
- '(org-table ((t :family "Barlow" :height 120 :foreground "#2A2B2A"))))
 
 (use-package org-modern
   :straight t
@@ -167,7 +153,7 @@ apps are not started from a shell."
 (setq denote-directory (expand-file-name "~/Documents"))
 (setq denote-prompts '(subdirectory title keywords))
 
-(setq org-todo-keywords '("TODO(t)"  "|" "CANCELLED(c)" "DONE(d)"))
+(setq org-todo-keywords '("TODO(t)" "HOLDING(h)" "RESCHEDULE(r)" "|" "CANCELLED(c)" "DONE(d)"))
 
 (setq org-capture-templates
 	'(("t" "Task" entry

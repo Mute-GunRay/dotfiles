@@ -133,23 +133,9 @@ Coloring of faces should  be transferred to autothemer themes at a later date
 #+begin_src emacs-lisp
   ;; defaults
   (custom-set-faces
-   '(default ((t :family "Beiruti" :height 180 :forground "#2A2B2A"))))
-  (custom-set-faces
-   '(fixed-pitch ((t :family "NovaMono" :height 160 :forground "#2A2B2A"))))
+   '(default ((t :family "NovaMono" :height 160 :forground "#2A2B2A"))))
   (custom-set-faces
    '(variable-pitch ((t :family "Bitter" :height 120 :forground "#2A2B2A"))))
-
-  ;; org blocks
-  (custom-set-faces
-   '(org-block-begin-line ((t :family "Beiruti" :height 80 :foreground "#EB8258"))))
-  (custom-set-faces
-   '(org-block-end-line ((t :family "Beiruti" :height 80 :foreground "#EB8258"))))
-  (custom-set-faces
-   '(org-block ((t :family "NovaMono" :height 120 :foreground "#2A2B2A"))))
-
-  ;; org tables
-  (custom-set-faces
-   '(org-table ((t :family "Barlow" :height 120 :foreground "#2A2B2A"))))
 #+end_src
 
 ** Org Modern
@@ -250,7 +236,7 @@ Uncatagorized packages and configurations
 
 ** org
 #+begin_src emacs-lisp
-  (setq org-todo-keywords '("TODO(t)"  "|" "CANCELLED(c)" "DONE(d)"))
+  (setq org-todo-keywords '("TODO(t)" "HOLDING(h)" "RESCHEDULE(r)" "|" "CANCELLED(c)" "DONE(d)"))
 #+end_src
 
 ** org-capture

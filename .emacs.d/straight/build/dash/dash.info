@@ -1,4 +1,4 @@
-This is dash.info, produced by makeinfo version 7.1 from dash.texi.
+This is dash.info, produced by makeinfo version 7.2 from dash.texi.
 
 This manual is for Dash version 2.19.1.
 
@@ -4726,7 +4726,6 @@ Index
 * global-dash-fontify-mode:              Fontification of special variables.
                                                               (line  12)
 
-
 
 Tag Table:
 Node: Top732
@@ -4945,4 +4944,5 @@ End Tag Table
 
 Local Variables:
 coding: utf-8
+Info-documentlanguage: en
 End:

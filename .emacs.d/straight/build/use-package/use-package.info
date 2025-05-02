@@ -1,4 +1,4 @@
-This is use-package.info, produced by makeinfo version 7.1 from
+This is use-package.info, produced by makeinfo version 7.2 from
 use-package.texi.
 
 This manual is for use-package, a configuration macro for simplifying
@@ -2319,7 +2319,6 @@ Index
 * use-package-report:                    Gathering Statistics. (line 19)
 * use-package-reset-statistics:          Gathering Statistics. (line 24)
 * use-package-verbose:                   Gathering Statistics. (line  6)
-
 
 
 Tag Table:

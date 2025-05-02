@@ -1,4 +1,4 @@
-This is org.info, produced by makeinfo version 7.1.1 from org.texi.
+This is org.info, produced by makeinfo version 7.2 from org.texi.
 
 This manual is for Org version 9.8.
 
@@ -512,7 +512,6 @@ Tables in Arbitrary Syntax
 * Radio tables::                 Sending and receiving radio tables.
 * A LaTeX example::           Step by step, almost a tutorial.
 * Translator functions::         Copy and modify.
-
 
 
 File: org.info,  Node: Introduction,  Next: Document Structure,  Prev: Top,  Up: Top

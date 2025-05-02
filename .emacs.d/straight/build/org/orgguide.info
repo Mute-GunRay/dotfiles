@@ -1,4 +1,4 @@
-This is orgguide.info, produced by makeinfo version 7.1.1 from
+This is orgguide.info, produced by makeinfo version 7.2 from
 orgguide.texi.
 
 Copyright © 2004-2025 Free Software Foundation, Inc.
@@ -122,7 +122,6 @@ Exporting
 * HTML Export::                  Exporting to HTML.
 * LaTeX Export::              Exporting to LaTeX and processing to PDF.
 * iCalendar Export::             Exporting to iCalendar.
-
 
 
 File: orgguide.info,  Node: Introduction,  Next: Document Structure,  Prev: Top,  Up: Top
@@ -2536,112 +2535,112 @@ file, use
 
      #+STARTUP: hidestars odd
 
-
 
 Tag Table:
-Node: Top909
-Node: Introduction5614
-Ref: Installation6300
-Ref: Activation7012
-Ref: Feedback7455
-Node: Document Structure7712
-Node: Headlines8783
-Ref: Headlines-Footnote-19665
-Node: Visibility Cycling9788
-Node: Motion11183
-Node: Structure Editing11777
-Ref: Structure Editing-Footnote-113213
-Node: Sparse Trees13317
-Ref: Sparse Trees-Footnote-114427
-Node: Plain Lists14542
-Node: Tables17334
-Ref: Creation and conversion19027
-Ref: Re-aligning and field motion19627
-Ref: Column and row editing20390
-Node: Hyperlinks21741
-Ref: Internal links22499
-Ref: External Links22952
-Ref: Handling Links24782
-Node: TODO Items26272
-Node: TODO Basics27249
-Node: Multi-state Workflow28782
-Node: Progress Logging30572
-Ref: Closing items31336
-Ref: Tracking TODO state changes31891
-Ref: Progress Logging-Footnote-132890
-Ref: Progress Logging-Footnote-232963
-Node: Priorities33041
-Node: Breaking Down Tasks33958
-Node: Checkboxes34761
-Node: Tags35898
-Ref: Tag inheritance36523
-Ref: Setting tags37261
-Ref: Tag groups39039
-Ref: Tag searches39831
-Ref: Tags-Footnote-140911
-Node: Properties41015
-Node: Dates and Times42827
-Node: Timestamps43868
-Node: Creating Timestamps46622
-Node: Deadlines and Scheduling48467
-Ref: Deadlines and Scheduling-Footnote-150531
-Ref: Deadlines and Scheduling-Footnote-250692
-Node: Clocking Work Time50855
-Node: Capture, Refile, Archive52290
-Node: Capture53102
-Ref: Setting up capture53408
-Ref: Using capture53679
-Ref: Capture templates54375
-Ref: Capture-Footnote-155808
-Ref: Capture-Footnote-255919
-Node: Refile and Copy56010
-Node: Archiving57324
-Node: Agenda Views58704
-Node: Agenda Files60163
-Node: Agenda Dispatcher60911
-Node: Built-in Agenda Views61833
-Node: Global TODO List62946
-Node: Matching Tags and Properties63707
-Node: Search View65737
-Node: Agenda Commands66847
-Ref: Motion (1)67446
-Ref: View/Go to Org file67649
-Ref: Change display68087
-Ref: Remote editing69458
-Ref: Quit and exit71046
-Node: Custom Agenda Views71300
-Node: Markup72776
-Node: Paragraphs73602
-Node: Emphasis and Monospace74724
-Node: Embedded LaTeX75142
-Node: Literal examples76011
-Node: Images77101
-Node: Creating Footnotes77702
-Node: Exporting78676
-Node: The Export Dispatcher79552
-Node: Export Settings80108
-Node: Table of Contents80933
-Node: Include Files81666
-Node: Comment Lines82352
-Node: ASCII/UTF-8 Export83077
-Node: HTML Export83811
-Node: LaTeX Export84849
-Node: iCalendar Export86592
-Node: Publishing87369
-Node: Working with Source Code89100
-Ref: Using header arguments90367
-Ref: Evaluating code blocks91542
-Ref: Results of evaluation92431
-Ref: Exporting code blocks93651
-Ref: Extracting source code94115
-Node: Miscellaneous94650
-Ref: Completion94773
-Ref: Structure Templates95110
-Ref: Clean view95474
+Node: Top907
+Node: Introduction5611
+Ref: Installation6297
+Ref: Activation7009
+Ref: Feedback7452
+Node: Document Structure7709
+Node: Headlines8780
+Ref: Headlines-Footnote-19662
+Node: Visibility Cycling9785
+Node: Motion11180
+Node: Structure Editing11774
+Ref: Structure Editing-Footnote-113210
+Node: Sparse Trees13314
+Ref: Sparse Trees-Footnote-114424
+Node: Plain Lists14539
+Node: Tables17331
+Ref: Creation and conversion19024
+Ref: Re-aligning and field motion19624
+Ref: Column and row editing20387
+Node: Hyperlinks21738
+Ref: Internal links22496
+Ref: External Links22949
+Ref: Handling Links24779
+Node: TODO Items26269
+Node: TODO Basics27246
+Node: Multi-state Workflow28779
+Node: Progress Logging30569
+Ref: Closing items31333
+Ref: Tracking TODO state changes31888
+Ref: Progress Logging-Footnote-132887
+Ref: Progress Logging-Footnote-232960
+Node: Priorities33038
+Node: Breaking Down Tasks33955
+Node: Checkboxes34758
+Node: Tags35895
+Ref: Tag inheritance36520
+Ref: Setting tags37258
+Ref: Tag groups39036
+Ref: Tag searches39828
+Ref: Tags-Footnote-140908
+Node: Properties41012
+Node: Dates and Times42824
+Node: Timestamps43865
+Node: Creating Timestamps46619
+Node: Deadlines and Scheduling48464
+Ref: Deadlines and Scheduling-Footnote-150528
+Ref: Deadlines and Scheduling-Footnote-250689
+Node: Clocking Work Time50852
+Node: Capture, Refile, Archive52287
+Node: Capture53099
+Ref: Setting up capture53405
+Ref: Using capture53676
+Ref: Capture templates54372
+Ref: Capture-Footnote-155805
+Ref: Capture-Footnote-255916
+Node: Refile and Copy56007
+Node: Archiving57321
+Node: Agenda Views58701
+Node: Agenda Files60160
+Node: Agenda Dispatcher60908
+Node: Built-in Agenda Views61830
+Node: Global TODO List62943
+Node: Matching Tags and Properties63704
+Node: Search View65734
+Node: Agenda Commands66844
+Ref: Motion (1)67443
+Ref: View/Go to Org file67646
+Ref: Change display68084
+Ref: Remote editing69455
+Ref: Quit and exit71043
+Node: Custom Agenda Views71297
+Node: Markup72773
+Node: Paragraphs73599
+Node: Emphasis and Monospace74721
+Node: Embedded LaTeX75139
+Node: Literal examples76008
+Node: Images77098
+Node: Creating Footnotes77699
+Node: Exporting78673
+Node: The Export Dispatcher79549
+Node: Export Settings80105
+Node: Table of Contents80930
+Node: Include Files81663
+Node: Comment Lines82349
+Node: ASCII/UTF-8 Export83074
+Node: HTML Export83808
+Node: LaTeX Export84846
+Node: iCalendar Export86589
+Node: Publishing87366
+Node: Working with Source Code89097
+Ref: Using header arguments90364
+Ref: Evaluating code blocks91539
+Ref: Results of evaluation92428
+Ref: Exporting code blocks93648
+Ref: Extracting source code94112
+Node: Miscellaneous94647
+Ref: Completion94770
+Ref: Structure Templates95107
+Ref: Clean view95471
 
 End Tag Table
 
 
 Local Variables:
 coding: utf-8
+Info-documentlanguage: en
 End:
