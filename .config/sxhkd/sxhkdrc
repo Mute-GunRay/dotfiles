@@ -12,7 +12,7 @@ super + @space
 
 # web browser
 super + w
-      floorp
+      zen-browser
 
 # text editor
 super + e
@@ -93,7 +93,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
-# preselect
+# preselect (choose where to open the next window)
 #
 
 # preselect the direction
@@ -127,3 +127,7 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# rotate windows
+super + {_,shift + }r
+      bspc node '@parent' -R {_,-}90
