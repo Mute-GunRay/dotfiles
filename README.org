@@ -1,0 +1,126 @@
+#+TITLE: System Setup
+#+DESCRIPTION: A full guide to installing and configuring my personal arch setup
+
+* Install 
+** Initial
+1) Boot into installation medium
+2) run `loadkeys us`
+3) run 'setfont <font name>'
+   + fonts are located in /usr/share/kbd/consolefonts/
+4) Verify UEFI boot mode `cat /sys/firmware/efi/fw_platform_size`
+5) run `timedatectl set-ntp true`
+8) run `timedatectl set-timezone <timezone>`
+** Internet
+1) Check network interface using `ip link`
+2) Ensure wifi card is not blocked using `rfkill` command
+   + If card is blocked use `rfkill unblock wlan`
+3) run `iwctl`
+   1) run `device list`
+   2) run `device <device name> set-property Powered on`
+   3) run `adapter <adapter name> set-property Powered on`
+   4) run `station <device name> scan`
+   5) run `station <device name> get-networks`
+   6) run `station <device name> connect <network name>`
+   7) Configure network connection
+      1) start and enable systemd-networkd.service
+      2) start and enable systemd-resolved.serivice
+   8) exit iwctl
+4)  test network connection using `ping archlinux.org`
+** Disks 
+ 1) identify devices using `fdisk -l`
+ 2) Create partitions
+    1) create an EFI partition for UEFI boot
+    2) create a linux file system for root
+ 3) Formate partitions
+    1) run `mkfs.fat -F32 /dev/<efi partition>` EFI partition
+    2) run `mkfs.ext4 /dev/<root partition>` for root partition
+ 4) Mount partitions
+    1) run `mount /dev/<root partition> /mnt`
+    2) run `mount /dev/<efi partition> /mnt/boot`
+ 5) run `pacstrap -K /mnt base linux linux-firmware nano`
+ 6) run `genfstap -U /mnt >> /mnt/etc/fstab`
+** System
+ 1) run `arch-chroot /mnt`
+ 2) run `ln -sf /usr/share/zoneinfo/<region>/<city> /etc/localtime`
+ 3) run `hwclock --systohc`
+ 4) uncomment en_US.UTF-8 in "/etc/locale.gen"
+ 5) run `locale-gen`
+ 6) create "/etc/locale.conf"; add "LANG=en_US.UTF-8"
+ 7) create "/etc/vconsole.conf"; add "KEYMAP=us"
+ 8) create "/etc/hostname"; add "<host name>"
+ 9) open "/etc/hosts"; add:
+    + "127.0.0.1    localhost"
+    + "::1    localhost"
+    + "127.0.1.1    <host name>.localdomain <host name>"
+** Users
+ 1) set root password `passwd`
+ 2) run `useradd -m <user name>`
+ 3) set user password `passwd`
+ 4) run `usermod -aG wheel,audio,video,optical,storage <user name>`
+ 5) run `pacman -S sudo`
+ 6) run `EDITOR=nano visudo`
+ 7) uncomment "%wheel ALL=(ALL) ALL"
+** Boot Loader
+ 1) run `pacman -S grub efibootmgr dosfstools os-prober mtools`
+ 2) run `mkdir /boot/EFI`
+ 3) run ` mount /dev/<efi partition> /boot/EFI`
+ 4) run `grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck`
+ 5) run `grub-mkconfig -o /boot/grub/grub.cfg`
+** Utilites
+ 1) install Utility packages:
+    + iwctl
+    + bluez
+    + bluez-utils
+    + amdgpu
+    + alsa-utils
+    + xorg
+    + git
+    + base-devel
+ 2) run `systemctl enable iwd.service`
+ 3) run `systemctl start iwd.service
+ 4) run `systemctl enable bluetooth.service`
+ 5) run `systemctl start blutooth.service`
+** Finish
+ 1) run `exit`
+ 2) run `reboot`
+
+* Post Install
+ 1) log in as user
+ 2) make directories:
+    + /home
+    + /home/user
+    + ~/.wallpapers
+    + ~/images
+    + ~/.config
+    + ~/.code
+    + ~/documents
+    + ~/downloads
+    + ~/.blogs
+    + ~/.scripts
+ 3) clone git repos
+ 4) install packages
+ 5) create symlinks
+ 6) run `reboot`
+* Packages
+** Development
+ + Emacs
+ + Kitty
+ + libresprite
+ + godot
+** Desktop Environment
+ + ly
+ + bspwm
+ + sxhkd
+ + eww
+** Tools
+ + Paru
+ + Zellij
+ + btop
+ + spicetify
+ + feh
+ + gnu stow
+** Misc
+ + Zen browser
+ + steam
+ + spotify
+ + manga-tui
