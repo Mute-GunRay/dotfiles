@@ -295,3 +295,12 @@ Uncatagorized packages and configurations
     (visual-fill-column-width 100)
     (visual-fill-column-center-text t))
 #+end_src
+** Language Tool
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :straight t
+    :config
+    (add-hook 'after-init-hook #'global-flycheck-mode))
+  (use-package flycheck-grammarly
+    :straight t)
+#+end_src

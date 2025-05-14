@@ -205,3 +205,10 @@ apps are not started from a shell."
   :custom
   (visual-fill-column-width 100)
   (visual-fill-column-center-text t))
+
+(use-package flycheck
+  :straight t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+(use-package flycheck-grammarly
+  :straight t)
