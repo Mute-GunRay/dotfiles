@@ -264,7 +264,8 @@ Using general.el allows for a more streamlined process of defining custom keybin
   ;; These are keybindings for org-mode
   (general-define-key
    "C-o a" 'org-agenda
-   "C-o t" 'org-create-table)
+   "C-o t" 'org-create-table
+   "C-o c" 'org-capture)
 
   ;; These are keybindings for magit
 
@@ -452,10 +453,7 @@ Further streamlines in window Git integrations
   (setq org-capture-templates
         '(("t" "Task" entry
   	 (file buffer-name)
-  	 "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
-  	("s" "Sub Task" checkitem
-  	 (file buffer-name)
-  	 "%^{ TASK }")))
+  	 "**** %^{ TASK } %^g")))
 
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
