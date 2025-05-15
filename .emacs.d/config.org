@@ -3,103 +3,284 @@
 #+description: A minimalist config for writing code and prose.
 
 
-* Utilities
-This section should only contain those packages that must be loaded before anything else
-Things like a package manager, keybinding packages, etc.
+* Overview
+** Purpose
+My intent with this emacs configuration is to allow for it to serve as a stand in for a variety of tools. First, it serves as a robust text editor for both coding and prose writing. Secondly it serves as a scheduling tool.
+** As Text Editor
+*** As IDE
+To fulfill the role of code editor emacs needed to have at least some of the features common to most modern IDEs. Namely:
++ Code completion
++ Git intergrations
++ Code snippets
++ LSP integrations
++ Syntax highlighting
+To achieve this I utilize the following packages:
++ rainbow-delimiters
++ electric-pair mode
++ display-line-numbers-mode
++ eglot
++ gdscript-mode
++ corfu
++ YASnippets
+*** As Word Processor
+To fulfill the role of word processor it needed to be have the bare minimum:
++ Spell checking
++ grammar checking
++ word search
+** As Scheduling Tool
+For my own purposes of scheduling and time management I follow Cal Newports "Time Block" structure. To do this I use org-agenda with the org habits module. To supplement this I also make use of the org-alert package to give me push notifications on my scheduled tasks.
+** Packages
+|---------------------+---------------------------------------------|
+| Name                | Purpose                                     |
+|---------------------+---------------------------------------------|
+| straight.el         | package manager                             |
+| general.el          | keybindings                                 |
+| rainbow-delimieters | color coded delimiters                      |
+| rainbow-mode        | hexcode highlighting                        |
+| spacious-padding    | padding around UI elements                  |
+| org-modern          | prettier org-mode                           |
+| corfu               | completion at point                         |
+| gdscript-mode       | custom major mode for Godot                 |
+| vertico             | minibuffer improvments                      |
+| save-hist           | saves minibuffer commands                   |
+| marginalia          | adds hints for minibuffer commands          |
+| magit               | Git intergrations                           |
+| forge               | Github issue and pull request intergrations |
+| org-mode            | rich markdown mode with many facets         |
+| flycheck            | syntax checking                             |
+| flycheck-grammarly  | grammarly integrations for flycheck         |
+| YASnippets          | code snippets package                       |
+|---------------------+---------------------------------------------|
+** Keybinds
+*** Cursor Movement
+|------+-------------------------|
+| Keys | function                |
+|------+-------------------------|
+| C-q  | moves back a word       |
+| C-e  | moves forward a word    |
+| C-s  | moves down one line     |
+| C-w  | moves up one line       |
+| C-a  | moves back one char     |
+| C-d  | moves forwared one char |
+|-----+--------------------------|
 
-** Package Manager
+*** Files
+|-------+--------------|
+| Keys  | function     |
+|-------+--------------|
+| C-f f | finds a file |
+| C-f s | saves a file |
+| C-f r | rename file  |
+| C-f d | delete file  |
+| C-f c | copy file    |
+|-------+--------------|
+
+*** Scroll Buffer
+|-----+---------------------|
+| Key | function            |
+|-----+---------------------|
+| C-k | scrolls buffer down |
+| C-j | scrolls buffer up   |
+| C-h | scroll down buffer  |
+| C-l | scroll up buffer    |
+|-----+---------------------|
+
+*** Move Between Windows
+|-----+---------------------------|
+| Key | function                  |
+|-----+---------------------------|
+| M-w | move up across windows    |
+| M-s | move down across windows  |
+| M-a | move left across windows  |
+| M-d | move right across windows |
+|-----+---------------------------|
+
+*** Copy and Paste
+|-------+---------------------|
+| Key   | function            |
+|-------+---------------------|
+| C-c c | copy-region-as-kill |
+| C-c x | kill-region         |
+| C-c v | paste               |
+| C-c u | undo                |
+|-------+---------------------|
+
+*** Create Windows
+|----------+---------------------------|
+| Key      | function                  |
+|----------+---------------------------|
+| C-(pipe) | split window vertically   |
+| C--      | split window horizontally |
+|-----------+--------------------------|
+
+*** Org Mode
+|-------+-------------------|
+| Keys  | function          |
+|-------+-------------------|
+| C-o a | org agnda         |
+| C-o t | create org tables |
+|-----+-------------------  |
+
+*** Magit
+|------+--------------|
+| Keys | function     |
+|------+--------------|
+| C-m  | magit status |
+|-------+-------------|
+** Builtin Options
 #+begin_src emacs-lisp
-  ;; bootstraping straight.el from its github repo
-  ;; builtin package.el is disabled via early-init file
+  ;; Strips down frame
+  (scroll-bar-mode -1) ;; turns OFF scroll bar
+  (menu-bar-mode -1) ;; turns OFF menu bar
+  (tool-bar-mode -1) ;; turns OFF tool bar
+
+  ;; turn ON helpful modes
+  (delete-selection-mode t)
+  (global-auto-revert-mode t)
+  (electric-pair-mode 1)
+
+  ;; turn OFF unneeded options
+  (electric-indent-mode nil)
+  (setq initial-scratch-message nil)
+
+
+  ;; mode specific hooks
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (add-hook 'text-mode-hook 'visual-line-mode)
+
+  ;; set backup directory
+  (setq backup-directory-alist '((".*" . "~/.backups")))
+
+  ;; turn OFF auto save features
+  (setq auto-save-default nil)
+  (setq make-backup-files nil)
+  (setq create-lockfiles nil)
+
+  ;; turns ON saving minibuffer history
+  (savehist-mode 1)
+  (setq history-length 25)
+
+  ;; turns ON recent file opening
+  (recentf-mode 1)
+
+  ;; remember and restore last cursor location of opened file
+  (save-place-mode 1)
+
+  ;; allow loading all themes without checking safety 
+  (setq custom-safe-themes t)
+#+end_src
+* Packages
+** Straight.el
+*** Details
+**** Creator
+Radian Software
+**** Description
+next-generation, purely functional package manager for the Emacs hacker.
+**** [[https://github.com/radian-software/straight.el][Repo]]
+*** Reasoning
+Using straight.el for package management along with its use-package integrations. Other package manager packages exist but this one is simple, easy to use, and no frills.
+*** Source Block
+#+begin_src emacs-lisp
   (defvar bootstrap-version)
+
   (let ((bootstrap-file
-	 (expand-file-name
-	  "straight/repos/straight.el/bootstrap.el"
-	  (or (bound-and-true-p straight-base-dir)
-	      user-emacs-directory)))
-	(bootstrap-version 7))
+  	 (expand-file-name
+  	  "straight/repos/straight.el/bootstrap.el"
+  	  (or (bound-and-true-p straight-base-dir)
+  	      user-emacs-directory)))
+  	(bootstrap-version 7))
     (unless (file-exists-p bootstrap-file)
       (with-current-buffer
-	  (url-retriev
-	   e-synchronously
-	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-	   'silent 'inhibit-cookies)
-	(goto-char (point-max))
-	(eval-print-last-sexp)))
+  	  (url-retrieve-synchronously
+  	   "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+  	   'silent 'inhibit-cookies)
+  	(goto-char (point-max))
+  	(eval-print-last-sexp)))
     (load bootstrap-file nil 'nomessage))
 
-  ;;enables straight.el use-package integration
   (straight-use-package 'use-package)
 
   (defun set-exec-path-from-shell-PATH ()
-    "Set up Emacs' `exec-path' and PATH environment variable to match
-  that used by the user's shell.
-
-  This is particularly useful under Mac OS X and macOS, where GUI
-  apps are not started from a shell."
     (interactive)
     (let ((path-from-shell (replace-regexp-in-string
-			    "[ \t\n]*$" "" (shell-command-to-string
-					    "$SHELL --login -c 'echo $PATH'"
-						      ))))
+  			    "[ \t\n]*$" "" (shell-command-to-string
+  					    "$SHELL --login -c 'echo $PATH'"
+  						      ))))
       (setenv "PATH" path-from-shell)
       (setq exec-path (split-string path-from-shell path-separator))))
 
   (set-exec-path-from-shell-PATH)
 #+end_src
-
-** Keybindings
-using General.el for its use-package integrations to allow for more clearly defined keybindings
+** General.el
+*** Details
+**** Creator
+noctuid
+**** Description
+general.el provides a more convenient method for binding keys in emacs.
+**** [[https://github.com/noctuid/general.el?tab=readme-ov-file#about][Repo]]
+*** Reasoning
+Using general.el allows for a more streamlined process of defining custom keybinds. Keybinds are bundled by broad catagories. A table in the overview section has a table listing all custom keybinds.
+*** Source Block
 #+begin_src emacs-lisp
   (use-package general
     :straight t
     :config (general-auto-unbind-keys))
 
+  ;; These are keybinds for basic functions
   (general-define-key
-    "C-q" 'backword-word
+   ;; cursor movement
+    "C-q" 'backward-word
     "C-e" 'forward-word
     "C-s" 'next-line
     "C-w" 'previous-line
     "C-a" 'backward-char
-    "C-d" 'forward-char)
+    "C-d" 'forward-char
+    ;; file manipulation
+    "C-f f" 'find-file
+    "C-f s" 'save-buffer
+    "C-f d" 'delete-file
+    "C-f c" 'copy-file
+    "C-f r" 'rename-file
+    "C-f n" 'recentf-open
+    ;; scroll buffer
+    "C-j" 'scroll-up-line
+    "C-k" 'scroll-down-line
+    "C-h" 'scroll-down-command
+    "C-l" 'sroll-up-command
+    ;; move between windows
+    "M-w" 'windmove-up
+    "M-s" 'windmove-down
+    "M-a" 'windmove-left
+    "M-d" 'windmove-right
+    ;; copy and past
+    "C-c u" 'undo
+    "C-c v" 'yank
+    "C-c x" 'kill-region
+    "C-c c" 'copy-region-as-kill
+    ;; split windows
+    "C-|" 'split-window-right
+    "C--" 'split-window-below)
 
+  ;; These are keybindings for org-mode
   (general-define-key
-   "C-f f" 'find-file
-   "C-f s" 'save-buffer)
+   "C-o a" 'org-agenda
+   "C-o t" 'org-create-table)
 
-  (general-define-key
-   "C-k" 'scroll-up-line
-   "C-l" 'scroll-down-line)
-#+end_src
+  ;; These are keybindings for magit
 
-* Graphical
-This section should only contain config options and packages that alter the overall UX of emacs
-This includes changes to faces, and themes
 
-** Builtin Options
-To create a more streamlined frame and to encourage the use of keybindings 
-#+begin_src emacs-lisp
-  ;; toggle builtin minor modes
-  (scroll-bar-mode -1) ;; turns off vertical scroll bar
-  (menu-bar-mode -1) ;; turns off top menu bar
-  (tool-bar-mode -1) ;; turns off top tool bar
-  (delete-selection-mode t) ;; allows delete and replace in region
-  (electric-indent-mode nil) ;; turns off default re-indentation functionality
-  (global-auto-revert-mode t) ;; auto updates buffers if file on disk has been changed
-  (electric-pair-mode -1)
-  ;; add hooks for major modes
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;; turns on line numbers for prog-mode
-  (add-hook 'prog-mode-hook 'electric-pair-mode) ;; turns on electric pair mode for prog-mode
-  (add-hook 'text-mode-hook 'visual-line-mode) ;; turn on word-wrapping when in text-mode
-
-  ;; set alists for some functions
-  (setq backup-directory-alist '((".*" . "~/.backups")))
-
-  (setq auto-save-default nil)
 #+end_src
 
 ** Rainbow Delimiters
-Color codes delimiters for ease of pairing
+*** Details
+**** Creator
+Fanael
+**** Description
+rainbow-delimiters is a "rainbow parentheses"-like mode which highlights delimiters such as parentheses, brackets or braces according to their depth. Each successive level is highlighted in a different color. This makes it easy to spot matching delimiters, orient yourself in the code, and tell which statements are at a given depth.
+**** [[https://github.com/Fanael/rainbow-delimiters][Repo]]
+*** Reasoning
+Color codes delimiters for ease of parsing while coding.
+*** Sourc Block
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :straight t)
@@ -108,7 +289,15 @@ Color codes delimiters for ease of pairing
 #+end_src
 
 ** Rainbow Mode
-Gives hex codes a background of the same color as the code
+*** Details
+**** Creator
+tarsius
+**** Description
+Adds an overview to hex codes to display the color it renders.
+**** [[https://github.com/emacsmirror/rainbow-mode][Repo]]
+*** Reasoning
+Allows for at a glance viewing of colors.
+*** Source Block
 #+begin_src emacs-lisp
   (use-package rainbow-mode
     :straight t
@@ -116,7 +305,15 @@ Gives hex codes a background of the same color as the code
 #+end_src
 
 ** Spacious Padding
+*** Details
+**** Creator
+Protesilaos
+**** Description
+This package provides a global minor mode to increase the spacing/padding of Emacs windows and frames.
+**** [[https://github.com/protesilaos/spacious-padding][Repo]]
+*** Reasoning
 Adds padding around certain UI elements such as buffers and mode line elements
+*** Source Block
 #+begin_src emacs-lisp
   (use-package spacious-padding
     :straight t
@@ -126,20 +323,16 @@ Adds padding around certain UI elements such as buffers and mode line elements
     (spacious-padding-mode 1))
 #+end_src
 
-** Faces
-This section will continue to grow as needed.
-The overall philosophy for faces is to use a limited number of them while focusing on having a cohesive aesthetic.
-Coloring of faces should  be transferred to autothemer themes at a later date
-#+begin_src emacs-lisp
-  ;; defaults
-  (custom-set-faces
-   '(default ((t :family "NovaMono" :height 160 :forground "#2A2B2A"))))
-  (custom-set-faces
-   '(variable-pitch ((t :family "Bitter" :height 120 :forground "#2A2B2A"))))
-#+end_src
-
 ** Org Modern
-This is added for ease of customizing and beautifying org mode documents
+*** Details
+**** Creator
+minad
+**** Description
+This package implements a modern style for your Org buffers using font locking and text properties. The package styles headlines, keywords, tables and source blocks.
+**** [[https://github.com/minad/org-modern][Repo]]
+*** Reasoning
+This is added for ease of customizing and beautifying org mode documents.
+*** Source Block
 #+begin_src emacs-lisp
   (use-package org-modern
     :straight t
@@ -147,16 +340,16 @@ This is added for ease of customizing and beautifying org mode documents
 
 #+end_src
 
-** Themes
-#+begin_src emacs-lisp
-  (add-to-list 'custom-theme-load-path  "~/.emacs.d/themes/")
-  (load-theme 'cyberpunk-2019 t)
-#+end_src
-* Development
-This section should only contain options and packages relevent to building emacs into a featureful IDE
-
-** Completion At Point (Corfu)
-For speeding up writing of code, works similarly to intellisense in VSCode
+** Corfu
+*** Details
+**** Creator
+minad
+**** Details
+Corfu enhances in-buffer completion with a small completion popup.
+**** [[https://github.com/minad/corfu][Repo]]
+*** Reasoning
+Gives intellisense like functionality.
+*** Source Block
 #+begin_src emacs-lisp
   (use-package corfu
     :straight t
@@ -167,8 +360,16 @@ For speeding up writing of code, works similarly to intellisense in VSCode
     (global-corfu-mode))
 
 #+end_src
-
 ** GDScript Mode
+*** Details
+**** Creator
+Godo Engine
+**** Details
+This package adds support for the GDScript programming language from the Godot game engine in Emacs. It gives syntax highlighting and indentations.
+**** [[https://github.com/godotengine/emacs-gdscript-mode][Repo]]
+*** Reasoning
+Allows for ease of use when using emacs as a default editor with the godot game engine
+*** Source Block
 #+begin_src emacs-lisp
   (use-package gdscript-mode
     :straight (gdscript-mode
@@ -177,11 +378,16 @@ For speeding up writing of code, works similarly to intellisense in VSCode
 	       :repo "godotengine/emacs-gdscript-mode")
     :hook (gdscript-mode . eglot-ensure))
 #+end_src
-
-* Misc
-Uncatagorized packages and configurations
-
 ** Vertico
+*** Details
+**** Creator
+minad
+**** Description
+Vertico provides a performant and minimalistic vertical completion UI based on the default completion system.
+**** [[https://github.com/minad/vertico][Repo]]
+*** Reasoning
+Enhances default minibuffer completion
+*** Source Block
 #+begin_src emacs-lisp
   (use-package vertico
     :straight t
@@ -193,28 +399,45 @@ Uncatagorized packages and configurations
     :init
     (vertico-mode))
   #+end_src
-
-** Save-hist
-#+begin_src emacs-lisp
-  (use-package savehist
-    :straight t
-    :init (savehist-mode))
-#+end_src
-
-** marginalia
+** Marginalia
+*** Details
+**** Creator
+minad
+**** Description
+This package provides marginalia-mode which adds marginalia to the minibuffer completions. Marginalia are marks or annotations placed at the margin of the page of a book or in this case helpful colorful annotations placed at the margin of the minibuffer for your completion candidates.
+**** [[https://github.com/minad/marginalia][Repo]]
+*** Reasoning
+Assists in chosing the right command in the minibuffer
+*** Source Block
 #+begin_src emacs-lisp
   (use-package marginalia
     :straight t
     :init (marginalia-mode))
 #+end_src
-
-** magit
+** Magit
+*** Details
+**** Creator
+tarsius
+**** Description
+Magit is an interface to the version control system Git, implemented as an Emacs package.
+**** [[https://github.com/magit/magit][Repo]]
+*** Reasoning
+Allows for in window handling of most git commands streamlining the version control process
+*** Source Block
 #+begin_src emacs-lisp
   (use-package magit
     :straight t)
 #+end_src
-
-** forge
+** Forge
+*** Details
+**** Creator
+tarsius
+**** Details
+Work with Git forges, such as Github and Gitlab, from the comfort of Magit and the rest of Emacs.
+**** [[https://github.com/magit/forge][Repo]]
+*** Reasoning
+Further streamlines in window Git integrations
+*** Source Block
 #+begin_src emacs-lisp
   (use-package forge
     :straight t
@@ -222,53 +445,18 @@ Uncatagorized packages and configurations
 
   (setq auth-sources '("~/.authinfo"))
 #+end_src
-
-** denote
-#+begin_src emacs-lisp
-  (use-package denote
-    :straight t
-    :general
-    ("C-n" 'denote))
-
-  (setq denote-directory (expand-file-name "~/Documents"))
-  (setq denote-prompts '(subdirectory title keywords))
-#+end_src
-
-** org
+** Org
 #+begin_src emacs-lisp
   (setq org-todo-keywords '("TODO(t)" "HOLDING(h)" "RESCHEDULE(r)" "|" "CANCELLED(c)" "DONE(d)"))
-#+end_src
 
-** org-capture
-#+begin_src emacs-lisp
   (setq org-capture-templates
-	'(("t" "Task" entry
-	  (file buffer-name)
-	  "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
-	  ("s" "Sub Task" checkitem
-	   (file buffer-name)
-	   "%^{ TASK }")
-	  ("i" "Idea")
-	  ("ib" "Blog Post" entry
-	   (file buffer-name)
-	   "* %^{ IDEA } %^g")
-	  ("ig" "Game" entry
-	   (file buffer-name)
-	   "* %^{ IDEA } %^g")
-	  ("is" "Script" entry
-	   (file buffer-name)
-	   "*%^{ IDEA } %^g")
-	  ("b" "Blog Posts")
-	  ("bt" "Title" entry
-	   (file buffer-name)
-	   "* %^{ TITLE } %^g")
-	  ("bs" "Section" entry
-	   (file buffer-name)
-	   "** %^{ TITLE } \n %^?")))
-#+end_src
+        '(("t" "Task" entry
+  	 (file buffer-name)
+  	 "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
+  	("s" "Sub Task" checkitem
+  	 (file buffer-name)
+  	 "%^{ TASK }")))
 
-** org-agenda
-#+begin_src emacs-lisp
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
   (setq org-habit-graph-column 60)
@@ -281,12 +469,18 @@ Uncatagorized packages and configurations
   (setq org-agenda-skip-scheduled-if-done t)
   (setq org-agenda-custom-commands
         '(( "t" "Today"
-  	  ((agenda "" ((org-agenda-span 'day)))))))
+    	((agenda "" ((org-agenda-span 'day)))))))
 
-  (use-package org-superstar
-    :straight t
-    :after org
-    :hook (org-mode . org-superstar-mode))
+  (add-hook 'org-mode-hook 'org-indent-mode)
+
+  (use-package org-modern-indent
+    :straight (org-modern-indent :type git
+  			       :host github
+  			       :repo "jdtsmith/org-modern-indent")
+    :config
+    (add-hook 'org-mode-hook #'org-modern-indent-mode 90))
+
+  (setq org-hide-emphasis-markers t)
 
   (use-package visual-fill-column
     :straight t
@@ -295,12 +489,82 @@ Uncatagorized packages and configurations
     (visual-fill-column-width 100)
     (visual-fill-column-center-text t))
 #+end_src
-** Language Tool
+** Flycheck
+*** Details
+**** Creator
+Flycheck
+**** Description
+Flycheck provides modern on-the-fly syntax checking extension for GNU Emacs 24, intended as replacement for the older Flymake extension which is part of GNU Emacs.
+*** Reasoning
+Allows for spell and grammar checking
+*** Source Block
 #+begin_src emacs-lisp
   (use-package flycheck
     :straight t
     :config
     (add-hook 'after-init-hook #'global-flycheck-mode))
   (use-package flycheck-grammarly
+    :straight t)
+#+end_src
+** Auto Themer
+*** Details
+**** Creator
+jasonm23
+**** Description
+Autothemer provides autothemer-deftheme a macro wrapper for deftheme and custom-theme-set-faces which creates a custom color theme.
+**** [[https://github.com/jasonm23/autothemer][Repo]]
+*** Reasoning
+This streamlines the creation of a custom theme.
+*** Source Block
+#+begin_src emacs-lisp
+  (use-package autothemer
+    :straight t)
+#+end_src
+** Tempel
+*** Details
+**** Creator
+minad
+**** Description
+Tempel is a tiny template package for Emacs, which uses the syntax of the Emacs Tempo library. Tempo is an ancient temple of the church of Emacs. It is 30 years old, but still in good shape since it successfully resisted change over the decades. However it may look a bit dusty here and there. Therefore we present Tempel, a new implementation of Tempo with inline expansion and integration with recent Emacs facilities. Tempel takes advantage of the standard completion-at-point-functions mechanism which is used by Emacs for in-buffer completion.
+**** [[https://github.com/minad/tempel?tab=readme-ov-file][Repo]]
+*** Reasoning
+Using snippets for creating basic code structures in a fast and efficient way
+*** Source Block
+#+begin_src emacs-lisp
+  ;; Configure Tempel
+  (use-package tempel
+    ;; Require trigger prefix before template name when completing.
+    ;; :custom
+    ;; (tempel-trigger-prefix "<")
+
+    :bind (("M-+" . tempel-complete) ;; Alternative tempel-expand
+           ("M-*" . tempel-insert))
+
+    :init
+
+    ;; Setup completion at point
+    (defun tempel-setup-capf ()
+      ;; Add the Tempel Capf to `completion-at-point-functions'.
+      ;; `tempel-expand' only triggers on exact matches. Alternatively use
+      ;; `tempel-complete' if you want to see all matches, but then you
+      ;; should also configure `tempel-trigger-prefix', such that Tempel
+      ;; does not trigger too often when you don't expect it. NOTE: We add
+      ;; `tempel-expand' *before* the main programming mode Capf, such
+      ;; that it will be tried first.
+      (setq-local completion-at-point-functions
+                  (cons #'tempel-expand
+                        completion-at-point-functions)))
+
+    (add-hook 'conf-mode-hook 'tempel-setup-capf)
+    (add-hook 'prog-mode-hook 'tempel-setup-capf)
+    (add-hook 'text-mode-hook 'tempel-setup-capf)
+
+    ;; Optionally make the Tempel templates available to Abbrev,
+    ;; either locally or globally. `expand-abbrev' is bound to C-x '.
+    ;; (add-hook 'prog-mode-hook #'tempel-abbrev-mode)
+    ;; (global-tempel-abbrev-mode)
+  )
+
+  (use-package tempel-collection
     :straight t)
 #+end_src

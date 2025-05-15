@@ -1,0 +1,98 @@
+;; here we declare some variables
+;; per the documentation: variables are useful for dynamic values
+;; values can be set by external scripts
+(defvar greeting "Hello Tate!")
+(defvar time-visible true)
+;; polling variables run a provided shell-script over an interval
+;; polling variables can be updated externally with the 'eww update' command
+(defpoll time :interval "1s" "date  '+%T (%Z)'")
+(defpoll date :interval "1s" "date '+%d:%m:%y'")
+;; listener variables run a script and then read the output
+;; needs an initial value
+(deflisten foo :initial "whatever"
+	   "some script")
+;; magic variables exist... but i do NOT understand how to manipulate them
+
+
+;; here we define a basic window
+(defwindow bar_right
+    ;; this sets the monitor
+    ;; i'll be sticking to numerical values
+    ;; other values are possible 
+    :monitor 0
+    ;; this defines the geometry
+    ;; think of these as being similar to CSS geometry
+    ;; values can be in % or px
+    ;; i'll be sticking to % values
+    ;; the x,y axes are defined by the anchor variable 
+    :geometry (geometry :x "-0.5%"
+			:y "1%"
+			:width "10%"
+			:height "2%"
+			:anchor "top right")
+    ;; BEGIN X11 VARIABLES
+    ;; stacking defines where the window should appear when overlapping
+    ;; 'fg' (foreground) gives widget window priority
+    ;; 'bg' (background) gives other windows priority
+    :stacking "bg"
+    ;; reserve tells the WM how to allocate screen space
+    ;; documentation for 'struts' is lacking
+    :reserve (struts :distance "2%"
+		      :side "top")
+    ;; window type tells the WM how to handle the window
+    ;; possible values are:
+    ;; 'normal', 'dock' 'toolbar' 'dialog', 'desktop
+    ;; default is 'normal', unless 'reserve' is specified
+    ;; if reserved is specified windowtype can be omitted
+    :windowtype "dock"
+    ;; wm-ignore is useful for creating dashboards
+    ;; boolean values
+    ;; documentation does not specify default value or
+    ;;if it can be omitted
+    :wm-ignore false
+    ;; END X11 VARIABLES
+    ;; these are where widgets go
+    ;; i need to do more testing on how this works
+    ;; basic syntax is <name> followed by any required attributes
+    ;; here we pass the greeting variable as the value of the text attribute
+    (greeter))
+
+
+;; this is an example widget
+;; syntax is <name> followed by a collection of attributes
+;; collection must be declared but can be empty
+;; attribute syntax is simply a name but can be flagged as option
+;; flag an attribute as optional by prefixing the name with a '?']
+;; widgets can only define a single top level widgets
+(defwidget greeter []
+  ;; this is the body of the widget
+  ;; we use a box to define the shape of the widget
+  ;; 'box' is a predefined widget within EWW
+  ;; 'box' has the following properties
+  ;; 'spacing': int, 'orientation': string, 'space-evenly' : boolean
+  ;; 'halign' is a global widget property
+  ;; after defining properties and their values
+  ;; we pass in the content of the widget 
+	   (box :orientation "horizontal"
+		:halign "center"
+		(label
+			:text "${date}::${time}")))
+
+;; this is an example widget with children
+;; the documentation on this confused me at first
+(defwidget labeled-container [name]
+  ;; here we define the box
+  ;; the class attribute is a global
+  ;; this works the same as a CSS selector
+  (box :class "container"
+       name
+       ;; children here allows for passing of widgets when invoking
+       ;; the widget at the window level
+       (children)))
+;; this is an example of a widget with more complex children structure
+(defwidget two-boxes []
+  (box
+   ;; this structure can be viewed similar to html
+   ;; think nested elements
+   (box :class "first" (children :nth 0))
+   (box :class "second" (children :nth 1))))
