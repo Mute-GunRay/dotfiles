@@ -110,7 +110,8 @@
 ;; These are keybindings for org-mode
 (general-define-key
  "C-o a" 'org-agenda
- "C-o t" 'org-create-table)
+ "C-o t" 'org-create-table
+ "C-o c" 'org-capture)
 
 ;; These are keybindings for magit
 
@@ -177,27 +178,7 @@
 (setq org-capture-templates
       '(("t" "Task" entry
 	 (file buffer-name)
-	 "* %^{ TASK } [#%^{ PRIORITY | A | B | C }] %^g")
-	("s" "Sub Task" checkitem
-	 (file buffer-name)
-	 "%^{ TASK }")
-	("i" "Idea")
-	("ib" "Blog Post" entry
-	 (file buffer-name)
-	 "* %^{ IDEA } %^g")
-	("ig" "Game" entry
-	 (file buffer-name)
-	 "* %^{ IDEA } %^g")
-	("is" "Script" entry
-	 (file buffer-name)
-	 "*%^{ IDEA } %^g")
-	("b" "Blog Posts")
-	("bt" "Title" entry
-	 (file buffer-name)
-	 "* %^{ TITLE } %^g")
-	("bs" "Section" entry
-	 (file buffer-name)
-	 "** %^{ TITLE } \n %^?")))
+	 "**** %^{ TASK } %^g")))
 
 (require 'org-habit)
 (add-to-list 'org-modules 'org-habit)
@@ -243,37 +224,17 @@
 
 ;; Configure Tempel
 (use-package tempel
-  ;; Require trigger prefix before template name when completing.
-  ;; :custom
-  ;; (tempel-trigger-prefix "<")
-
+  :straight t
   :bind (("M-+" . tempel-complete) ;; Alternative tempel-expand
          ("M-*" . tempel-insert))
-
   :init
-
-  ;; Setup completion at point
   (defun tempel-setup-capf ()
-    ;; Add the Tempel Capf to `completion-at-point-functions'.
-    ;; `tempel-expand' only triggers on exact matches. Alternatively use
-    ;; `tempel-complete' if you want to see all matches, but then you
-    ;; should also configure `tempel-trigger-prefix', such that Tempel
-    ;; does not trigger too often when you don't expect it. NOTE: We add
-    ;; `tempel-expand' *before* the main programming mode Capf, such
-    ;; that it will be tried first.
     (setq-local completion-at-point-functions
                 (cons #'tempel-expand
                       completion-at-point-functions)))
-
   (add-hook 'conf-mode-hook 'tempel-setup-capf)
   (add-hook 'prog-mode-hook 'tempel-setup-capf)
-  (add-hook 'text-mode-hook 'tempel-setup-capf)
-
-  ;; Optionally make the Tempel templates available to Abbrev,
-  ;; either locally or globally. `expand-abbrev' is bound to C-x '.
-  ;; (add-hook 'prog-mode-hook #'tempel-abbrev-mode)
-  ;; (global-tempel-abbrev-mode)
-)
+  (add-hook 'text-mode-hook 'tempel-setup-capf))
 
 (use-package tempel-collection
   :straight t)
