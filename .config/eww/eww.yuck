@@ -1,40 +1,85 @@
-(defpoll time :interval "1s" "date  '+%T (%Z)'")
-(defpoll date :interval "1s" "date '+%d:%m:%y'")
-
+(defpoll time :interval "1s" "date  '+%T'")
+(defpoll date :interval "1s" "date '+%d-%m-%y'")
 
 (defwindow date-time-bar
     :monitor 0 
     :geometry (geometry :x "-0.5%"
 			:y "1%"
-			:width "10%"
-			:height "3%"
+			:width "11.5%"
+			:height "5%"
 			:anchor "top right")
     :stacking "bg"
-    :reserve (struts :distance "3%"
+    :reserve (struts :distance "5%"
 		      :side "top")
     :wm-ignore false
     (date-time))
 
 (defwidget date-time []
   (box :orientation "horizontal"
-       :halign "center"
-       (label
-	:text "${date}::${time}")))
-(defwindow system-mon-bar
+       :class "bar-box"
+       :space-evenly "false"
+       (date)
+       (time)))
+
+(defwidget date []
+  (box :orientation "horizontal"
+       :space-evenly "false"
+       :class "box-spacer"
+       (icon :name "calendar_icon")
+       (label :class "text-main"
+	      :text "${date}")))
+(defwidget time []
+  (box :orientation "horizontal"
+       :space-evenly "false"
+       :class "box-spacer"
+       (icon :name "hourglass_icon")
+       (label :class "text-main"
+	      :text "${time}")))
+	
+(defwindow sysmon-bar
     :monitor 0
-    :geometry (geometry :x "-25%"
+    :geometry (geometry :x "-13%"
 			:y "1%"
-			:width "15%"
+			:width "13%"
 			:height "3%"
 			:anchor "top right")
     :stacking "bg"
-    :reserve (struts :distance "3%"
+    :reserve (struts :distance "5%"
 		     :side "top")
     :wm-ignore false
-    (system-mon))
+    (sysmon))
 
-(defwidget system-mon []
+(defwidget sysmon []
   (box :orientation "horizontal"
-       :halign "center"
-       (label
-	:text "${EWW_TEMPS['K10TEMP_TCCD1']} ${EWW_TEMPS['AMDGPU_EDGE']}")))
+       :class "bar-box"
+       :space-evenly "false"
+       (sysmon-cpu)
+       (sysmon-ram)
+       (sysmon-temp)))
+
+(defwidget sysmon-cpu []
+  (box :space-evenly "false"
+       :class "box-spacer"
+       (icon :name "cpu_icon")
+       (label :class "text-main"
+	      :text "${round(EWW_CPU['avg'], 2)}%")))
+
+(defwidget sysmon-ram []
+  (box :space-evenly "false"
+       :class "box-spacer"
+       (icon :name "ram_icon")
+       (label :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
+	      :class "text-main")))
+
+(defwidget sysmon-temp []
+  (box :space-evenly "false"
+       :class "box-spacer"
+       (icon :name "therm_icon")
+       (label :class "text-main"
+	      :text "${round(EWW_TEMPS['K10TEMP_TCCD1'], 2)}℃")))
+
+(defwidget icon [name]
+  (image :path "icons/${name}.png"
+	 :class "icons"
+	 :image-width 25
+	 :image-height 25))

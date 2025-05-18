@@ -1,0 +1,69 @@
+$blue0:        #b4f9f8;
+$blue1:        #89ddff;
+$blue2:        #7dcfff;
+$blue3:        #7aa2f7;
+$blue4:        #3d59a1;
+
+$teal0:        #2ac3de;
+$teal1:        #0db9d7;
+
+$green0:       #9ece6a;
+$green1:       #73daca;
+$green2:       #41a6b5;
+$green3:       #1abc9c;
+
+$yellow:       #e0af68;
+
+$magenta0:     #bb9af7;
+$magenta1:     #ff007c;
+
+$orange:       #ff9e64;
+
+$purple:       #9d7cd8;
+
+$red0:         #f7768e;
+$red1:         #db4b4b;
+
+$grey0:        #c0caf5;
+$grey1:        #a9b1d6;
+$grey2:        #737aa2;
+$grey3:        #565f89;
+$grey4:        #545c7e;
+$grey5:        #414868;
+$grey6:        #3b4261;
+$grey7:        #394b70;
+$grey8:        #24283b;
+$grey9:        #1f2335;
+$grey10:       #1b1e2d;
+$grey11:       #292e42;
+
+* {
+    font-family: "NovaMono";
+}
+
+.bar-box {
+    background-color: $grey5;
+    border-width: 4px;
+    border-style: solid;
+    border-color: $grey0;
+    border-radius: 25px;
+}
+
+.text-datetime {
+    color: $blue3;
+    font-weight: bolder;
+}
+
+.text-main {
+    color: $purple;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.icons {
+    margin: 8px;
+}
+
+.box-spacer {
+    margin: 2px 1px;
+}
