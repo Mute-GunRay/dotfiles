@@ -246,7 +246,7 @@ Using general.el allows for a more streamlined process of defining custom keybin
     "C-j" 'scroll-up-line
     "C-k" 'scroll-down-line
     "C-h" 'scroll-down-command
-    "C-l" 'sroll-up-command
+    "C-l" 'scroll-up-command
     ;; move between windows
     "M-w" 'windmove-up
     "M-s" 'windmove-down
@@ -428,6 +428,8 @@ Allows for in window handling of most git commands streamlining the version cont
 #+begin_src emacs-lisp
   (use-package magit
     :straight t)
+
+
 #+end_src
 ** Forge
 *** Details
@@ -517,6 +519,9 @@ This streamlines the creation of a custom theme.
 #+begin_src emacs-lisp
   (use-package autothemer
     :straight t)
+
+  (add-to-list 'custom-theme-load-path "~/.dotfiles/.emacs.d/themes/")
+  (load-theme 'my t)
 #+end_src
 ** Tempel
 *** Details

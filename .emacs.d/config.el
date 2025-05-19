@@ -92,7 +92,7 @@
   "C-j" 'scroll-up-line
   "C-k" 'scroll-down-line
   "C-h" 'scroll-down-command
-  "C-l" 'sroll-up-command
+  "C-l" 'scroll-up-command
   ;; move between windows
   "M-w" 'windmove-up
   "M-s" 'windmove-down
@@ -221,6 +221,9 @@
 
 (use-package autothemer
   :straight t)
+
+(add-to-list 'custom-theme-load-path "~/.dotfiles/.emacs.d/themes/")
+(load-theme 'my t)
 
 ;; Configure Tempel
 (use-package tempel
