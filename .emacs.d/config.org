@@ -30,31 +30,31 @@ To fulfill the role of word processor it needed to be have the bare minimum:
 ** As Scheduling Tool
 For my own purposes of scheduling and time management I follow Cal Newports "Time Block" structure. To do this I use org-agenda with the org habits module. To supplement this I also make use of the org-alert package to give me push notifications on my scheduled tasks.
 ** Packages
-|---------------------+---------------------------------------------|
-| Name                | Purpose                                     |
-|---------------------+---------------------------------------------|
-| straight.el         | package manager                             |
-| general.el          | keybindings                                 |
-| rainbow-delimieters | color coded delimiters                      |
-| rainbow-mode        | hexcode highlighting                        |
-| spacious-padding    | padding around UI elements                  |
-| org-modern          | prettier org-mode                           |
-| corfu               | completion at point                         |
-| gdscript-mode       | custom major mode for Godot                 |
-| vertico             | minibuffer improvments                      |
-| save-hist           | saves minibuffer commands                   |
-| marginalia          | adds hints for minibuffer commands          |
-| magit               | Git intergrations                           |
-| forge               | Github issue and pull request intergrations |
-| org-mode            | rich markdown mode with many facets         |
-| flycheck            | syntax checking                             |
-| flycheck-grammarly  | grammarly integrations for flycheck         |
-| YASnippets          | code snippets package                       |
-|---------------------+---------------------------------------------|
+|---------------------+---------------------------|
+| *Name*                | *Purpose*                   |
+|---------------------+---------------------------|
+| straight.el         | package manager           |
+| general.el          | keybindings               |
+| rainbow-delimieters | color coded delimiters    |
+| rainbow-mode        | hexcode highlighting      |
+| spacious-padding    | padding around UI         |
+| org-modern          | prettier org-mode         |
+| corfu               | completion at point       |
+| gdscript-mode       | gdscript major mode + lsp |
+| vertico             | minibuffer improvments    |
+| save-hist           | saves minibuffer commands |
+| marginalia          | adds info to minibuffer   |
+| magit               | Git intergrations         |
+| forge               | further Git Intergrations |
+| org-mode            | rich markdown mode +      |
+| flycheck            | syntax checking           |
+| flycheck-grammarly  | grammer checking          |
+| YASnippets          | code snippets package     |
+|---------------------+---------------------------|
 ** Keybinds
 *** Cursor Movement
 |------+-------------------------|
-| Keys | function                |
+| *Keys* | *function*                |
 |------+-------------------------|
 | C-q  | moves back a word       |
 | C-e  | moves forward a word    |
@@ -62,7 +62,7 @@ For my own purposes of scheduling and time management I follow Cal Newports "Tim
 | C-w  | moves up one line       |
 | C-a  | moves back one char     |
 | C-d  | moves forwared one char |
-|-----+--------------------------|
+|------+-------------------------|
 
 *** Files
 |-------+--------------|
@@ -77,7 +77,7 @@ For my own purposes of scheduling and time management I follow Cal Newports "Tim
 
 *** Scroll Buffer
 |-----+---------------------|
-| Key | function            |
+| *Key* | *function*            |
 |-----+---------------------|
 | C-k | scrolls buffer down |
 | C-j | scrolls buffer up   |
@@ -87,7 +87,7 @@ For my own purposes of scheduling and time management I follow Cal Newports "Tim
 
 *** Move Between Windows
 |-----+---------------------------|
-| Key | function                  |
+| *Key* | *function*                  |
 |-----+---------------------------|
 | M-w | move up across windows    |
 | M-s | move down across windows  |
@@ -97,7 +97,7 @@ For my own purposes of scheduling and time management I follow Cal Newports "Tim
 
 *** Copy and Paste
 |-------+---------------------|
-| Key   | function            |
+| *Key*   | *function*            |
 |-------+---------------------|
 | C-c c | copy-region-as-kill |
 | C-c x | kill-region         |
@@ -107,26 +107,26 @@ For my own purposes of scheduling and time management I follow Cal Newports "Tim
 
 *** Create Windows
 |----------+---------------------------|
-| Key      | function                  |
+| *Key*      | *function*                  |
 |----------+---------------------------|
 | C-(pipe) | split window vertically   |
 | C--      | split window horizontally |
-|-----------+--------------------------|
+|----------+---------------------------|
 
 *** Org Mode
 |-------+-------------------|
-| Keys  | function          |
+| *Keys*  | *function*          |
 |-------+-------------------|
 | C-o a | org agnda         |
 | C-o t | create org tables |
-|-----+-------------------  |
+|-------+-------------------|
 
 *** Magit
 |------+--------------|
-| Keys | function     |
+| *Keys* | *function*     |
 |------+--------------|
 | C-m  | magit status |
-|-------+-------------|
+|------+--------------|
 ** Builtin Options
 #+begin_src emacs-lisp
   ;; Strips down frame

@@ -3,7 +3,7 @@
 
 "30.1"
 
-#s(hash-table test equal data ("org-elpa" ("2025-05-10 07:34:38" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2025-05-10 07:34:38" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2025-05-10 07:34:38" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2025-05-10 07:34:38" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :depth (full single-branch) :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2025-05-10 07:34:38" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2025-05-10 07:34:38" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2025-05-10 07:34:38" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2025-05-10 07:34:38" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2025-05-10 07:34:38" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "general" ("2025-05-10 07:34:38" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/general.el" :package "general" :local-repo "general.el")) "rainbow-delimiters" ("2025-05-10 07:34:38" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "rainbow-mode" ("2025-05-10 07:34:38" nil (:type git :host github :repo "emacs-straight/rainbow-mode" :files ("*" (:exclude ".git")) :package "rainbow-mode" :local-repo "rainbow-mode")) "spacious-padding" ("2025-05-10 07:34:38" ("emacs") (:type git :host github :repo "emacs-straight/spacious-padding" :files ("*" (:exclude ".git")) :package "spacious-padding" :local-repo "spacious-padding")) "org-modern" ("2025-05-10 07:34:38" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/org-modern" :package "org-modern" :local-repo "org-modern")) "compat" ("2025-05-10 07:34:38" ("emacs" "seq") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "seq" ("2025-05-10 07:34:38" nil (:type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git")) :package "seq" :local-repo "seq")) "corfu" ("2025-05-10 07:34:38" ("emacs" "compat") (:type git :flavor melpa :files (:defaults "extensions/corfu-*.el" "corfu-pkg.el") :host github :repo "minad/corfu" :package "corfu" :local-repo "corfu")) "gdscript-mode" ("2025-05-10 07:34:38" ("emacs") (:type git :host github :repo "godotengine/emacs-gdscript-mode" :flavor melpa :package "gdscript-mode" :local-repo "emacs-gdscript-mode")) "vertico" ("2025-05-10 07:34:38" ("emacs" "compat") (:type git :flavor melpa :files (:defaults "extensions/vertico-*.el" "vertico-pkg.el") :host github :repo "minad/vertico" :package "vertico" :local-repo "vertico")) "marginalia" ("2025-05-10 07:34:38" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "magit" ("2025-05-10 07:34:38" ("emacs" "compat" "dash" "magit-section" "seq" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit*.el" "lisp/git-*.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "magit-pkg.el" (:exclude "lisp/magit-section.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "dash" ("2025-05-10 07:34:38" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "magit-section" ("2025-05-10 07:34:38" ("emacs" "compat" "dash" "seq") (:flavor melpa :files ("lisp/magit-section.el" "docs/magit-section.texi" "magit-section-pkg.el" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2025-05-10 07:34:38" ("emacs" "compat" "seq") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2025-05-10 07:34:38" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "forge" ("2025-05-10 07:34:39" ("emacs" "compat" "closql" "dash" "emacsql" "ghub" "let-alist" "magit" "markdown-mode" "seq" "transient" "yaml") (:type git :flavor melpa :host github :repo "magit/forge" :package "forge" :local-repo "forge")) "closql" ("2025-05-10 07:34:39" ("emacs" "compat" "emacsql") (:type git :flavor melpa :host github :repo "magit/closql" :package "closql" :local-repo "closql")) "emacsql" ("2025-05-10 07:34:39" ("emacs") (:type git :flavor melpa :files (:defaults "README.md" "sqlite" "emacsql-pkg.el") :host github :repo "magit/emacsql" :package "emacsql" :local-repo "emacsql")) "ghub" ("2025-05-10 07:34:39" ("emacs" "compat" "let-alist" "treepy") (:type git :flavor melpa :host github :repo "magit/ghub" :package "ghub" :local-repo "ghub")) "let-alist" ("2025-05-10 07:34:39" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "treepy" ("2025-05-10 07:34:39" ("emacs") (:type git :flavor melpa :host github :repo "volrath/treepy.el" :package "treepy" :local-repo "treepy.el")) "markdown-mode" ("2025-05-10 07:34:39" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "yaml" ("2025-05-10 07:34:39" ("emacs") (:type git :flavor melpa :host github :repo "zkry/yaml.el" :package "yaml" :local-repo "yaml.el")) "denote" ("2025-05-10 07:34:39" ("emacs") (:type git :host github :repo "emacs-straight/denote" :files ("*" (:exclude ".git")) :package "denote" :local-repo "denote")) "org-superstar" ("2025-05-10 07:34:39" ("org" "emacs") (:type git :flavor melpa :host github :repo "integral-dw/org-superstar-mode" :package "org-superstar" :local-repo "org-superstar-mode")) "org" ("2025-05-10 07:34:39" ("emacs") (:type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*")) :package "org")) "visual-fill-column" ("2025-05-10 07:34:39" ("emacs") (:type git :flavor melpa :host codeberg :repo "joostkremers/visual-fill-column" :package "visual-fill-column" :local-repo "visual-fill-column"))))
+#s(hash-table test equal data ("org-elpa" ("2025-06-02 16:25:01" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2025-06-02 16:25:01" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2025-06-02 16:25:01" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2025-06-02 16:25:01" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :depth (full single-branch) :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2025-06-02 16:25:01" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2025-06-02 16:25:01" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2025-06-02 16:25:01" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2025-06-02 16:25:01" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2025-06-02 16:25:01" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "general" ("2025-06-02 16:25:01" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/general.el" :package "general" :local-repo "general.el")) "rainbow-delimiters" ("2025-06-02 16:25:01" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "rainbow-mode" ("2025-06-02 16:25:01" nil (:type git :host github :repo "emacs-straight/rainbow-mode" :files ("*" (:exclude ".git")) :package "rainbow-mode" :local-repo "rainbow-mode")) "spacious-padding" ("2025-06-02 16:25:01" ("emacs") (:type git :host github :repo "emacs-straight/spacious-padding" :files ("*" (:exclude ".git")) :package "spacious-padding" :local-repo "spacious-padding")) "org-modern" ("2025-06-02 16:25:01" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/org-modern" :package "org-modern" :local-repo "org-modern")) "compat" ("2025-06-02 16:25:01" ("emacs" "seq") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "seq" ("2025-06-02 16:25:01" nil (:type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git")) :package "seq" :local-repo "seq")) "corfu" ("2025-06-02 16:25:01" ("emacs" "compat") (:type git :flavor melpa :files (:defaults "extensions/corfu-*.el" "corfu-pkg.el") :host github :repo "minad/corfu" :package "corfu" :local-repo "corfu")) "gdscript-mode" ("2025-06-02 16:25:01" ("emacs") (:type git :host github :repo "godotengine/emacs-gdscript-mode" :flavor melpa :package "gdscript-mode" :local-repo "emacs-gdscript-mode")) "vertico" ("2025-06-02 16:25:01" ("emacs" "compat") (:type git :flavor melpa :files (:defaults "extensions/vertico-*.el" "vertico-pkg.el") :host github :repo "minad/vertico" :package "vertico" :local-repo "vertico")) "marginalia" ("2025-06-02 16:25:01" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "magit" ("2025-06-02 16:25:01" ("emacs" "compat" "dash" "magit-section" "seq" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit*.el" "lisp/git-*.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "magit-pkg.el" (:exclude "lisp/magit-section.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "dash" ("2025-06-02 16:25:01" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "magit-section" ("2025-06-02 16:25:01" ("emacs" "compat" "dash" "seq") (:flavor melpa :files ("lisp/magit-section.el" "docs/magit-section.texi" "magit-section-pkg.el" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2025-06-02 16:25:01" ("emacs" "compat" "seq") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2025-06-02 16:25:01" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "forge" ("2025-06-02 16:25:01" ("emacs" "compat" "closql" "dash" "emacsql" "ghub" "let-alist" "magit" "markdown-mode" "seq" "transient" "yaml") (:type git :flavor melpa :host github :repo "magit/forge" :package "forge" :local-repo "forge")) "closql" ("2025-06-02 16:25:01" ("emacs" "compat" "emacsql") (:type git :flavor melpa :host github :repo "magit/closql" :package "closql" :local-repo "closql")) "emacsql" ("2025-06-02 16:25:01" ("emacs") (:type git :flavor melpa :files (:defaults "README.md" "sqlite" "emacsql-pkg.el") :host github :repo "magit/emacsql" :package "emacsql" :local-repo "emacsql")) "ghub" ("2025-06-02 16:25:01" ("emacs" "compat" "let-alist" "treepy") (:type git :flavor melpa :host github :repo "magit/ghub" :package "ghub" :local-repo "ghub")) "let-alist" ("2025-06-02 16:25:01" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "treepy" ("2025-06-02 16:25:01" ("emacs") (:type git :flavor melpa :host github :repo "volrath/treepy.el" :package "treepy" :local-repo "treepy.el")) "markdown-mode" ("2025-06-02 16:25:01" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "yaml" ("2025-06-02 16:25:01" ("emacs") (:type git :flavor melpa :host github :repo "zkry/yaml.el" :package "yaml" :local-repo "yaml.el")) "denote" ("2025-05-13 13:35:56" ("emacs") (:type git :host github :repo "emacs-straight/denote" :files ("*" (:exclude ".git")) :package "denote" :local-repo "denote")) "org-superstar" ("2025-05-13 13:35:56" ("org" "emacs") (:type git :flavor melpa :host github :repo "integral-dw/org-superstar-mode" :package "org-superstar" :local-repo "org-superstar-mode")) "org" ("2025-06-02 16:25:02" ("emacs") (:type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*")) :package "org")) "visual-fill-column" ("2025-06-02 16:25:02" ("emacs") (:type git :flavor melpa :host codeberg :repo "joostkremers/visual-fill-column" :package "visual-fill-column" :local-repo "visual-fill-column")) "langtool" ("2025-05-13 13:19:49" ("emacs") (:type git :flavor melpa :files ("langtool.el" "langtool-pkg.el") :host github :repo "mhayashi1120/Emacs-langtool" :package "langtool" :local-repo "Emacs-langtool")) "flycheck" ("2025-06-02 16:25:02" ("emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "flycheck-grammarly" ("2025-06-02 16:25:02" ("emacs" "flycheck" "grammarly" "s") (:type git :flavor melpa :host github :repo "emacs-grammarly/flycheck-grammarly" :package "flycheck-grammarly" :local-repo "flycheck-grammarly")) "grammarly" ("2025-06-02 16:25:02" ("emacs" "s" "request" "websocket") (:type git :flavor melpa :host github :repo "emacs-grammarly/grammarly" :package "grammarly" :local-repo "grammarly")) "s" ("2025-06-02 16:25:02" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "request" ("2025-06-02 16:25:02" ("emacs") (:type git :flavor melpa :files ("request.el" "request-pkg.el") :host github :repo "tkf/emacs-request" :package "request" :local-repo "emacs-request")) "websocket" ("2025-06-02 16:25:02" ("cl-lib") (:type git :flavor melpa :host github :repo "ahyatt/emacs-websocket" :package "websocket" :local-repo "emacs-websocket")) "org-modern-indent" ("2025-06-02 16:25:02" ("emacs" "org" "compat") (:type git :host github :repo "jdtsmith/org-modern-indent" :package "org-modern-indent" :local-repo "org-modern-indent")) "autothemer" ("2025-06-02 16:25:02" ("dash" "emacs") (:type git :flavor melpa :host github :repo "jasonm23/autothemer" :package "autothemer" :local-repo "autothemer")) "yasnippets" ("2025-05-15 10:16:12" nil (:type git :host github :repo "rejeep/yasnippets" :files (:defaults) :package "yasnippets" :local-repo "yasnippets")) "yasnippet-snippets" ("2025-05-15 10:26:34" ("yasnippet") (:type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets" :package "yasnippet-snippets" :local-repo "yasnippet-snippets")) "yasnippet" ("2025-05-15 10:26:34" ("cl-lib" "emacs") (:type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet" :package "yasnippet" :local-repo "yasnippet")) "yasnippet-capf" ("2025-05-15 10:26:34" ("emacs" "yasnippet") (:type git :flavor melpa :host github :repo "elken/yasnippet-capf" :package "yasnippet-capf" :local-repo "yasnippet-capf")) "tempel" ("2025-06-02 16:25:02" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/tempel" :package "tempel" :local-repo "tempel")) "tempel-collection" ("2025-06-02 16:25:02" ("tempel" "emacs") (:type git :flavor melpa :files (:defaults "templates" "tempel-collection-pkg.el") :host github :repo "Crandel/tempel-collection" :package "tempel-collection" :local-repo "tempel-collection"))))
 
 #s(hash-table test equal data ("straight" ((straight-ert-print-hack straight-autoloads straight straight-x) (autoload 'straight-remove-unused-repos "straight" "Remove unused repositories from the repos and build directories.
 A repo is considered \"unused\" if it was not explicitly requested via
@@ -4031,10 +4031,563 @@ enough space for a vertical split.  This function is used as the
 value of `split-window-preferred-function' to allow
 `display-buffer' to split such windows.
 
-(fn &optional WINDOW)") (register-definition-prefixes "visual-fill-column" '("turn-on-visual-fill-column-mode" "visual-fill-column-")) (provide 'visual-fill-column-autoloads))))
+(fn &optional WINDOW)") (register-definition-prefixes "visual-fill-column" '("turn-on-visual-fill-column-mode" "visual-fill-column-")) (provide 'visual-fill-column-autoloads)) "langtool" ((langtool-autoloads langtool) (defalias 'langtool-check #'langtool-check-buffer) (autoload 'langtool-check-buffer "langtool" "Check context current buffer and light up errors.
+Optional \\[universal-argument] read LANG name.
 
-#s(hash-table test eq data (org-elpa #s(hash-table test equal data (version 15 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "general" nil "cl-lib" nil "rainbow-delimiters" nil "rainbow-mode" nil "spacious-padding" nil "org-modern" nil "compat" nil "seq" nil "corfu" nil "gdscript-mode" nil "vertico" nil "savehist" nil "marginalia" nil "magit" nil "dash" nil "magit-section" nil "transient" nil "with-editor" nil "forge" nil "closql" nil "emacsql" nil "ghub" nil "let-alist" nil "treepy" nil "markdown-mode" nil "yaml" nil "denote" nil "org-superstar" nil "org" (org :type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*"))) "visual-fill-column" nil)) melpa #s(hash-table test equal data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "general" (general :type git :flavor melpa :host github :repo "noctuid/general.el") "cl-lib" nil "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "rainbow-mode" nil "spacious-padding" nil "org-modern" (org-modern :type git :flavor melpa :host github :repo "minad/org-modern") "compat" nil "seq" nil "corfu" (corfu :type git :flavor melpa :files (:defaults "extensions/corfu-*.el" "corfu-pkg.el") :host github :repo "minad/corfu") "gdscript-mode" (gdscript-mode :type git :flavor melpa :host github :repo "godotengine/emacs-gdscript-mode") "vertico" (vertico :type git :flavor melpa :files (:defaults "extensions/vertico-*.el" "vertico-pkg.el") :host github :repo "minad/vertico") "savehist" nil "marginalia" (marginalia :type git :flavor melpa :host github :repo "minad/marginalia") "magit" (magit :type git :flavor melpa :files ("lisp/magit*.el" "lisp/git-*.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "magit-pkg.el" (:exclude "lisp/magit-section.el") "magit-pkg.el") :host github :repo "magit/magit") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "magit-section" (magit-section :type git :flavor melpa :files ("lisp/magit-section.el" "docs/magit-section.texi" "magit-section-pkg.el" "magit-section-pkg.el") :host github :repo "magit/magit") "transient" (transient :type git :flavor melpa :host github :repo "magit/transient") "with-editor" (with-editor :type git :flavor melpa :host github :repo "magit/with-editor") "forge" (forge :type git :flavor melpa :host github :repo "magit/forge") "closql" (closql :type git :flavor melpa :host github :repo "magit/closql") "emacsql" (emacsql :type git :flavor melpa :files (:defaults "README.md" "sqlite" "emacsql-pkg.el") :host github :repo "magit/emacsql") "ghub" (ghub :type git :flavor melpa :host github :repo "magit/ghub") "let-alist" nil "treepy" (treepy :type git :flavor melpa :host github :repo "volrath/treepy.el") "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "yaml" (yaml :type git :flavor melpa :host github :repo "zkry/yaml.el") "denote" nil "org-superstar" (org-superstar :type git :flavor melpa :host github :repo "integral-dw/org-superstar-mode") "visual-fill-column" (visual-fill-column :type git :flavor melpa :host codeberg :repo "joostkremers/visual-fill-column"))) gnu-elpa-mirror #s(hash-table test equal data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "rainbow-mode" (rainbow-mode :type git :host github :repo "emacs-straight/rainbow-mode" :files ("*" (:exclude ".git"))) "spacious-padding" (spacious-padding :type git :host github :repo "emacs-straight/spacious-padding" :files ("*" (:exclude ".git"))) "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "seq" (seq :type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git"))) "savehist" nil "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "denote" (denote :type git :host github :repo "emacs-straight/denote" :files ("*" (:exclude ".git"))))) nongnu-elpa #s(hash-table test equal data (version 4 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil)) el-get #s(hash-table test equal data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil)) emacsmirror-mirror #s(hash-table test equal data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "savehist" nil))))
+You can change the `langtool-default-language' to apply all session.
+Restrict to selection when region is activated.
 
-("visual-fill-column" "org" "org-superstar" "denote" "yaml" "markdown-mode" "treepy" "let-alist" "ghub" "emacsql" "closql" "forge" "with-editor" "transient" "magit-section" "dash" "magit" "marginalia" "savehist" "vertico" "gdscript-mode" "corfu" "seq" "compat" "org-modern" "spacious-padding" "rainbow-mode" "rainbow-delimiters" "cl-lib" "general" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
+(fn &optional LANG)" t) (autoload 'langtool-switch-default-language "langtool" "Switch `langtool-default-language' to LANG.
+
+(fn LANG)" t) (register-definition-prefixes "langtool" '("langtool-")) (provide 'langtool-autoloads)) "flycheck" ((flycheck-ert flycheck-autoloads flycheck-buttercup flycheck) (autoload 'flycheck-manual "flycheck" "Open the Flycheck manual." t) (autoload 'flycheck-quick-help "flycheck" "Display brief Flycheck help." t) (autoload 'flycheck-mode "flycheck" "Flycheck is a minor mode for on-the-fly syntax checking.
+
+In `flycheck-mode' the buffer is automatically syntax-checked
+using the first suitable syntax checker from `flycheck-checkers'.
+Use `flycheck-select-checker' to select a checker for the current
+buffer manually.
+
+If you run into issues, use `\\[flycheck-verify-setup]' to get help.
+
+Flycheck supports many languages out of the box, and many
+additional ones are available on MELPA.  Adding new ones is very
+easy.  Complete documentation is available online at URL
+`https://www.flycheck.org/en/latest/'.  Please report issues and
+request features at URL `https://github.com/flycheck/flycheck'.
+
+Flycheck displays its status in the mode line.  In the default
+configuration, it looks like this:
+
+`FlyC'     This buffer has not been checked yet.
+`FlyC*'    Flycheck is running.  Expect results soon!
+`FlyC:0'   Last check resulted in no errors and no warnings.
+`FlyC:3|5' This buffer contains three errors and five warnings.
+           Use `\\[flycheck-list-errors]' to see the list.
+`FlyC-'    Flycheck doesn't have a checker for this buffer.
+
+You may also see the following icons:
+`FlyC!'    The checker crashed.
+`FlyC.'    The last syntax check was manually interrupted.
+`FlyC?'    The checker did something unexpected, like exiting with 1
+           but returning no errors.
+
+The following keybindings are available in `flycheck-mode':
+
+\\{flycheck-mode-map}
+(you can change the prefix by customizing
+`flycheck-keymap-prefix')
+
+If called interactively, enable Flycheck mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is ‘toggle’; disable the mode otherwise.
+
+(fn &optional ARG)" t) (put 'global-flycheck-mode 'globalized-minor-mode t) (defvar global-flycheck-mode nil "Non-nil if Global Flycheck mode is enabled.
+See the `global-flycheck-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-flycheck-mode'.") (custom-autoload 'global-flycheck-mode "flycheck" nil) (autoload 'global-flycheck-mode "flycheck" "Toggle Flycheck mode in all buffers.
+With prefix ARG, enable Global Flycheck mode if ARG is positive;
+otherwise, disable it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Flycheck mode is enabled in all buffers where `flycheck-mode-on-safe'
+would do it.
+
+See `flycheck-mode' for more information on Flycheck mode.
+
+(fn &optional ARG)" t) (autoload 'flycheck-define-error-level "flycheck" "Define a new error LEVEL with PROPERTIES.
+
+The following PROPERTIES constitute an error level:
+
+`:severity SEVERITY'
+     A number denoting the severity of this level.  The higher
+     the number, the more severe is this level compared to other
+     levels.  Defaults to 0; info is -10, warning is 10, and
+     error is 100.
+
+     The severity is used by `flycheck-error-level-<' to
+     determine the ordering of errors according to their levels.
+
+`:compilation-level LEVEL'
+
+     A number indicating the broad class of messages that errors
+     at this level belong to: one of 0 (info), 1 (warning), or
+     2 or nil (error).  Defaults to nil.
+
+     This is used by `flycheck-checker-pattern-to-error-regexp'
+     to map error levels into `compilation-mode''s hierarchy and
+     to get proper highlighting of errors in `compilation-mode'.
+
+`:overlay-category CATEGORY'
+     A symbol denoting the overlay category to use for error
+     highlight overlays for this level.  See Info
+     node `(elisp)Overlay Properties' for more information about
+     overlay categories.
+
+     A category for an error level overlay should at least define
+     the `face' property, for error highlighting.  Another useful
+     property for error level categories is `priority', to
+     influence the stacking of multiple error level overlays.
+
+`:fringe-bitmap BITMAPS'
+     A fringe bitmap symbol denoting the bitmap to use for fringe
+     indicators for this level, or a cons of two bitmaps (one for
+     narrow fringes and one for wide fringes).  See Info node
+     `(elisp)Fringe Bitmaps' for more information about fringe
+     bitmaps, including a list of built-in fringe bitmaps.
+
+`:fringe-face FACE'
+     A face symbol denoting the face to use for fringe indicators
+     for this level.
+
+`:margin-spec SPEC'
+     A display specification indicating what to display in the
+     margin when `flycheck-indication-mode' is `left-margin' or
+     `right-margin'.  See Info node `(elisp)Displaying in the
+     Margins'.  If omitted, Flycheck generates an image spec from
+     the fringe bitmap.
+
+`:error-list-face FACE'
+     A face symbol denoting the face to use for messages of this
+     level in the error list.  See `flycheck-list-errors'.
+
+(fn LEVEL &rest PROPERTIES)") (function-put 'flycheck-define-error-level 'lisp-indent-function 1) (autoload 'flycheck-define-command-checker "flycheck" "Define SYMBOL as syntax checker to run a command.
+
+Define SYMBOL as generic syntax checker via
+`flycheck-define-generic-checker', which uses an external command
+to check the buffer.  SYMBOL and DOCSTRING are the same as for
+`flycheck-define-generic-checker'.
+
+In addition to the properties understood by
+`flycheck-define-generic-checker', the following PROPERTIES
+constitute a command syntax checker.  Unless otherwise noted, all
+properties are mandatory.  Note that the default `:error-filter'
+of command checkers is `flycheck-sanitize-errors'.
+
+`:command COMMAND'
+     The command to run for syntax checking.
+
+     COMMAND is a list of the form `(EXECUTABLE [ARG ...])'.
+
+     EXECUTABLE is a string with the executable of this syntax
+     checker.  It can be overridden with the variable
+     `flycheck-SYMBOL-executable'.  Note that this variable is
+     NOT implicitly defined by this function.  Use
+     `flycheck-def-executable-var' to define this variable.
+
+     Each ARG is an argument to the executable, either as string,
+     or as special symbol or form for
+     `flycheck-substitute-argument', which see.
+
+`:error-patterns PATTERNS'
+     A list of patterns to parse the output of the `:command'.
+
+     Each ITEM in PATTERNS is a list `(LEVEL SEXP ...)', where
+     LEVEL is a Flycheck error level (see
+     `flycheck-define-error-level'), followed by one or more RX
+     `SEXP's which parse an error of that level and extract line,
+     column, file name and the message.
+
+     See `rx' for general information about RX, and
+     `flycheck-rx-to-string' for some special RX forms provided
+     by Flycheck.
+
+     All patterns are applied in the order of declaration to the
+     whole output of the syntax checker.  Output already matched
+     by a pattern will not be matched by subsequent patterns.  In
+     other words, the first pattern wins.
+
+     This property is optional.  If omitted, however, an
+     `:error-parser' is mandatory.
+
+`:error-parser FUNCTION'
+     A function to parse errors with.
+
+     The function shall accept three arguments OUTPUT CHECKER
+     BUFFER.  OUTPUT is the syntax checker output as string,
+     CHECKER the syntax checker that was used, and BUFFER a
+     buffer object representing the checked buffer.  The function
+     must return a list of `flycheck-error' objects parsed from
+     OUTPUT.
+
+     This property is optional.  If omitted, it defaults to
+     `flycheck-parse-with-patterns'.  In this case,
+     `:error-patterns' is mandatory.
+
+`:standard-input t'
+     Whether to send the buffer contents on standard input.
+
+     If this property is given and has a non-nil value, send the
+     contents of the buffer on standard input.
+
+     Some checkers that support reading from standard input have
+     a separate flag to indicate the name of the file whose
+     contents are being passed on standard input (typically
+     `stdin-filename').  In that case, use the `(option)' form in
+     `:command' to pass the value of variable `buffer-file-name'
+     when the current buffer has a file name (that is,
+     use `option \"--stdin-file-name\" buffer-file-name').
+
+     For buffers not backed by files, checkers that support input
+     on stdin typically report a file name like `-' or `<stdin>'.
+     Make sure your error parser or patterns expect these file
+     names (for example, use `(or \"<stdin>\" (file-name))') or
+     call `flycheck-remove-error-file-names' in a custom
+     `:error-filter'.
+
+     Defaults to nil.
+
+Note that you may not give `:start', `:interrupt', and
+`:print-doc' for a command checker.  You can give a custom
+`:verify' function, though, whose results will be appended to the
+default `:verify' function of command checkers.
+
+(fn SYMBOL DOCSTRING &rest PROPERTIES)") (function-put 'flycheck-define-command-checker 'lisp-indent-function 1) (function-put 'flycheck-define-command-checker 'doc-string-elt 2) (autoload 'flycheck-def-config-file-var "flycheck" "Define SYMBOL as config file variable for CHECKER, with default FILE-NAME.
+
+SYMBOL is declared as customizable variable using `defcustom', to
+provide configuration files for the given syntax CHECKER.
+CUSTOM-ARGS are forwarded to `defcustom'.
+
+FILE-NAME is the initial value of the new variable.  If omitted,
+the default value is nil.  It can be either a string or a list of
+strings.
+
+Use this together with the `config-file' form in the `:command'
+argument to `flycheck-define-checker'.
+
+(fn SYMBOL CHECKER &optional FILE-NAME &rest CUSTOM-ARGS)" nil t) (function-put 'flycheck-def-config-file-var 'lisp-indent-function 3) (autoload 'flycheck-def-option-var "flycheck" "Define SYMBOL as option variable with INIT-VALUE for CHECKER.
+
+SYMBOL is declared as customizable variable using `defcustom', to
+provide an option for the given syntax CHECKERS (a checker or a
+list of checkers).  INIT-VALUE is the initial value of the
+variable, and DOCSTRING is its docstring.  CUSTOM-ARGS are
+forwarded to `defcustom'.
+
+Use this together with the `option', `option-list' and
+`option-flag' forms in the `:command' argument to
+`flycheck-define-checker'.
+
+(fn SYMBOL INIT-VALUE CHECKERS DOCSTRING &rest CUSTOM-ARGS)" nil t) (function-put 'flycheck-def-option-var 'lisp-indent-function 3) (function-put 'flycheck-def-option-var 'doc-string-elt 4) (autoload 'flycheck-define-checker "flycheck" "Define SYMBOL as command syntax checker with DOCSTRING and PROPERTIES.
+
+Like `flycheck-define-command-checker', but PROPERTIES must not
+be quoted.  Also, implicitly define the executable variable for
+SYMBOL with `flycheck-def-executable-var'.
+
+(fn SYMBOL DOCSTRING &rest PROPERTIES)" nil t) (function-put 'flycheck-define-checker 'lisp-indent-function 1) (function-put 'flycheck-define-checker 'doc-string-elt 2) (register-definition-prefixes "flycheck" '("flycheck-" "help-flycheck-checker-d" "list-flycheck-errors")) (register-definition-prefixes "flycheck-buttercup" '("flycheck-buttercup-format-error-list")) (register-definition-prefixes "flycheck-ert" '("flycheck-er")) (provide 'flycheck-autoloads)) "s" ((s s-autoloads) (register-definition-prefixes "s" '("s-")) (provide 's-autoloads)) "request" ((request-autoloads request) (autoload 'request-response-header "request" "Fetch the values of RESPONSE header field named FIELD-NAME.
+
+It returns comma separated values when the header has multiple
+field with the same name, as :RFC:`2616` specifies.
+
+Examples::
+
+  (request-response-header response
+                           \"content-type\") ; => \"text/html; charset=utf-8\"
+  (request-response-header response
+                           \"unknown-field\") ; => nil
+
+(fn RESPONSE FIELD-NAME)") (autoload 'request-response-headers "request" "Return RESPONSE headers as an alist.
+I would have chosen a function name that wasn't so suggestive that
+`headers` is a member of the `request-response` struct, but
+as there's already precedent with `request-response-header', I
+hew to consistency.
+
+(fn RESPONSE)") (autoload 'request "request" "Main entry requesting URL with property list SETTINGS as follow.
+
+==================== ========================================================
+Keyword argument      Explanation
+==================== ========================================================
+TYPE          (string)   type of request to make: POST/GET/PUT/DELETE
+PARAMS         (alist)   set \"?key=val\" part in URL
+DATA    (string/alist)   data to be sent to the server
+FILES          (alist)   files to be sent to the server (see below)
+PARSER        (symbol)   a function that reads current buffer and return data
+HEADERS        (alist)   additional headers to send with the request
+ENCODING      (symbol)   encoding for request body (utf-8 by default)
+SUCCESS     (function)   called on success
+ERROR       (function)   called on error
+COMPLETE    (function)   called on both success and error
+TIMEOUT       (number)   timeout in second
+STATUS-CODE    (alist)   map status code (int) to callback
+SYNC            (bool)   If non-nil, wait until request is done. Default is nil.
+==================== ========================================================
+
+
+* Callback functions
+
+Callback functions STATUS, ERROR, COMPLETE and `cdr\\='s in element of
+the alist STATUS-CODE take same keyword arguments listed below.  For
+forward compatibility, these functions must ignore unused keyword
+arguments (i.e., it\\='s better to use `&allow-other-keys\\=' [#]_).::
+
+    (CALLBACK                      ; SUCCESS/ERROR/COMPLETE/STATUS-CODE
+     :data          data           ; whatever PARSER function returns, or nil
+     :error-thrown  error-thrown   ; (ERROR-SYMBOL . DATA), or nil
+     :symbol-status symbol-status  ; success/error/timeout/abort/parse-error
+     :response      response       ; request-response object
+     ...)
+
+.. [#] `&allow-other-keys\\=' is a special \"markers\" available in macros
+   in the CL library for function definition such as `cl-defun\\=' and
+   `cl-function\\='.  Without this marker, you need to specify all arguments
+   to be passed.  This becomes problem when request.el adds new arguments
+   when calling callback functions.  If you use `&allow-other-keys\\='
+   (or manually ignore other arguments), your code is free from this
+   problem.  See info node `(cl) Argument Lists\\=' for more information.
+
+Arguments data, error-thrown, symbol-status can be accessed by
+`request-response-data\\=', `request-response-error-thrown\\=',
+`request-response-symbol-status\\=' accessors, i.e.::
+
+    (request-response-data RESPONSE)  ; same as data
+
+Response object holds other information which can be accessed by
+the following accessors:
+`request-response-status-code\\=',
+`request-response-url\\=' and
+`request-response-settings\\='
+
+* STATUS-CODE callback
+
+STATUS-CODE is an alist of the following format::
+
+    ((N-1 . CALLBACK-1)
+     (N-2 . CALLBACK-2)
+     ...)
+
+Here, N-1, N-2,... are integer status codes such as 200.
+
+
+* FILES
+
+FILES is an alist of the following format::
+
+    ((NAME-1 . FILE-1)
+     (NAME-2 . FILE-2)
+     ...)
+
+where FILE-N is a list of the form::
+
+    (FILENAME &key PATH BUFFER STRING MIME-TYPE)
+
+FILE-N can also be a string (path to the file) or a buffer object.
+In that case, FILENAME is set to the file name or buffer name.
+
+Example FILES argument::
+
+    `((\"passwd\"   . \"/etc/passwd\")                ; filename = passwd
+      (\"scratch\"  . ,(get-buffer \"*scratch*\"))    ; filename = *scratch*
+      (\"passwd2\"  . (\"password.txt\" :file \"/etc/passwd\"))
+      (\"scratch2\" . (\"scratch.txt\"  :buffer ,(get-buffer \"*scratch*\")))
+      (\"data\"     . (\"data.csv\"     :data \"1,2,3\\n4,5,6\\n\")))
+
+.. note:: FILES is implemented only for curl backend for now.
+   As furl.el_ supports multipart POST, it should be possible to
+   support FILES in pure elisp by making furl.el_ another backend.
+   Contributions are welcome.
+
+   .. _furl.el: https://code.google.com/p/furl-el/
+
+
+* PARSER function
+
+PARSER function takes no argument and it is executed in the
+buffer with HTTP response body.  The current position in the HTTP
+response buffer is at the beginning of the buffer.  As the HTTP
+header is stripped off, the cursor is actually at the beginning
+of the response body.  So, for example, you can pass `json-read\\='
+to parse JSON object in the buffer.  To fetch whole response as a
+string, pass `buffer-string\\='.
+
+When using `json-read\\=', it is useful to know that the returned
+type can be modified by `json-object-type\\=', `json-array-type\\=',
+`json-key-type\\=', `json-false\\=' and `json-null\\='.  See docstring of
+each function for what it does.  For example, to convert JSON
+objects to plist instead of alist, wrap `json-read\\=' by `lambda\\='
+like this.::
+
+    (request
+     \"https://...\"
+     :parser (lambda ()
+               (let ((json-object-type \\='plist))
+                 (json-read)))
+     ...)
+
+This is analogous to the `dataType\\=' argument of jQuery.ajax_.
+Only this function can access to the process buffer, which
+is killed immediately after the execution of this function.
+
+* SYNC
+
+Synchronous request is functional, but *please* don\\='t use it
+other than testing or debugging.  Emacs users have better things
+to do rather than waiting for HTTP request.  If you want a better
+way to write callback chains, use `request-deferred\\='.
+
+If you can\\='t avoid using it (e.g., you are inside of some hook
+which must return some value), make sure to set TIMEOUT to
+relatively small value.
+
+Due to limitation of `url-retrieve-synchronously\\=', response slots
+`request-response-error-thrown\\=', `request-response-history\\=' and
+`request-response-url\\=' are unknown (always nil) when using
+synchronous request with `url-retrieve\\=' backend.
+
+* Note
+
+API of `request\\=' is somewhat mixture of jQuery.ajax_ (Javascript)
+and requests.request_ (Python).
+
+.. _jQuery.ajax: https://api.jquery.com/jQuery.ajax/
+.. _requests.request: https://docs.python-requests.org
+
+(fn URL &rest SETTINGS &key (PARAMS nil) (DATA nil) (HEADERS nil) (ENCODING \\='utf-8) (ERROR nil) (SYNC nil) (RESPONSE (make-request-response)) &allow-other-keys)") (function-put 'request 'lisp-indent-function 'defun) (autoload 'request-untrampify-filename "request" "Return FILE as the local file name.
+
+(fn FILE)") (autoload 'request-abort "request" "Abort request for RESPONSE (the object returned by `request').
+Note that this function invoke ERROR and COMPLETE callbacks.
+Callbacks may not be called immediately but called later when
+associated process is exited.
+
+(fn RESPONSE)") (register-definition-prefixes "request" '("request-")) (provide 'request-autoloads)) "websocket" ((websocket websocket-autoloads) (register-definition-prefixes "websocket" '("websocket-")) (provide 'websocket-autoloads)) "grammarly" ((grammarly grammarly-autoloads) (autoload 'grammarly-check-text "grammarly" "Send the TEXT to check.
+
+(fn TEXT)") (register-definition-prefixes "grammarly" '("grammarly-")) (provide 'grammarly-autoloads)) "flycheck-grammarly" ((flycheck-grammarly flycheck-grammarly-autoloads) (autoload 'flycheck-grammarly-setup "flycheck-grammarly" "Setup flycheck-package." t) (register-definition-prefixes "flycheck-grammarly" '("flycheck-grammarly-")) (provide 'flycheck-grammarly-autoloads)) "org-modern-indent" ((org-modern-indent-autoloads org-modern-indent) (autoload 'org-modern-indent-mode "org-modern-indent" "Org-modern-like block brackets within org-indent.
+
+This is a minor mode.  If called interactively, toggle the
+`Org-Modern-Indent mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable the
+mode if ARG is nil, omitted, or is a positive number.  Disable the mode
+if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate the variable `org-modern-indent-mode'.
+
+The mode's hook is called both when the mode is enabled and when it is
+disabled.
+
+(fn &optional ARG)" t) (register-definition-prefixes "org-modern-indent" '("org-modern-indent-")) (provide 'org-modern-indent-autoloads)) "autothemer" ((autothemer autothemer-autoloads) (autoload 'autothemer-deftheme "autothemer" "Define a theme NAME with description DESCRIPTION.
+A color PALETTE can be used to define `let*'-like
+bindings within both the REDUCED-SPECS and the BODY.
+
+(fn NAME DESCRIPTION PALETTE REDUCED-SPECS &rest BODY)" nil t) (autoload 'autothemer-insert-missing-face "autothemer" "Insert a face spec template for an unthemed face.
+An approximate color from the palette will be used for
+color attributes." t) (autoload 'autothemer-insert-missing-faces "autothemer" "Insert face spec templates for unthemed faces matching REGEXP.
+An error is shown when no current theme is available.
+
+(fn &optional REGEXP)" t) (autoload 'autothemer-generate-templates-filtered "autothemer" "Autogenerate customizations for unthemed faces matching REGEXP.
+
+Calls `autothemer-generate-templates' after user provides REGEXP interactively.
+
+(fn REGEXP)" t) (autoload 'autothemer-generate-templates "autothemer" "Autogenerate customizations for unthemed faces (optionally by REGEXP).
+
+Generate customizations that approximate current face definitions using the
+nearest colors in the color palette of `autothemer-current-theme'.
+
+An error is shown when no current theme is available.
+
+(fn &optional REGEXP)" t) (register-definition-prefixes "autothemer" '("autothemer-")) (provide 'autothemer-autoloads)) "yasnippets" ((yasnippets)) "yasnippet" ((yasnippet-autoloads yasnippet) (autoload 'yas-minor-mode "yasnippet" "YASnippet minor mode.
+
+When YASnippet mode is enabled, `yas-expand', normally bound to
+the TAB key, expands snippets of code depending on the major mode.
+
+This is a minor mode.  If called interactively, toggle the `yas minor
+mode' mode.  If the prefix argument is positive, enable the mode, and if
+it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable the
+mode if ARG is nil, omitted, or is a positive number.  Disable the mode
+if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate the variable `yas-minor-mode'.
+
+The mode's hook is called both when the mode is enabled and when it is
+disabled.
+
+(fn &optional ARG)" t) (put 'yas-global-mode 'globalized-minor-mode t) (defvar yas-global-mode nil "Non-nil if Yas-Global mode is enabled.
+See the `yas-global-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `yas-global-mode'.") (custom-autoload 'yas-global-mode "yasnippet" nil) (autoload 'yas-global-mode "yasnippet" "Toggle Yas minor mode in all buffers.
+With prefix ARG, enable Yas-Global mode if ARG is positive; otherwise,
+disable it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Yas minor mode is enabled in all buffers where `yas-minor-mode-on'
+would do it.
+
+See `yas-minor-mode' for more information on Yas minor mode.
+
+(fn &optional ARG)" t) (autoload 'snippet-mode "yasnippet" "A mode for editing yasnippets" t nil) (register-definition-prefixes "yasnippet" '("help-snippet-def" "snippet-mode-map" "yas")) (provide 'yasnippet-autoloads)) "yasnippet-snippets" ((yasnippet-snippets-autoloads yasnippet-snippets) (autoload 'yasnippet-snippets-initialize "yasnippet-snippets" "Load the `yasnippet-snippets' snippets directory.") (eval-after-load 'yasnippet '(yasnippet-snippets-initialize)) (register-definition-prefixes "yasnippet-snippets" '("yasnippet-snippets-")) (provide 'yasnippet-snippets-autoloads)) "yasnippet-capf" ((yasnippet-capf yasnippet-capf-autoloads) (autoload 'yasnippet-capf "yasnippet-capf" "Complete with yasnippet at point.
+If INTERACTIVE is nil the function acts like a Capf.
+
+(fn &optional INTERACTIVE)" t) (register-definition-prefixes "yasnippet-capf" '("yasnippet-capf-")) (provide 'yasnippet-capf-autoloads)) "tempel" ((tempel tempel-autoloads) (autoload 'tempel-expand "tempel" "Expand exactly matching template name at point.
+This completion-at-point-function (Capf) returns only the single
+exactly matching template name.  As a consequence the completion
+UI (e.g. Corfu) does not present the candidates for selection.
+If you want to select from a list of templates, use
+`tempel-complete' instead.  If INTERACTIVE is nil the function
+acts like a Capf, otherwise like an interactive completion
+command.
+
+(fn &optional INTERACTIVE)" t) (autoload 'tempel-complete "tempel" "Complete template name at point and expand.
+This completion-at-point-function (Capf) returns a list of all
+possible template names, which are then displayed in the
+completion UI (e.g. Corfu) for selection.  See also
+`tempel-expand'.  If INTERACTIVE is nil the function acts like a
+Capf, otherwise like an interactive completion command.
+
+(fn &optional INTERACTIVE)" t) (autoload 'tempel-insert "tempel" "Insert TEMPLATE-OR-NAME.
+If called interactively, select a template with `completing-read'.
+
+(fn TEMPLATE-OR-NAME)" t) (autoload 'tempel-key "tempel" "Bind KEY to TEMPLATE-OR-NAME in MAP.
+
+(fn KEY TEMPLATE-OR-NAME &optional MAP)" nil t) (autoload 'tempel-abbrev-mode "tempel" "Install Tempel templates as abbrevs.
+
+This is a minor mode.  If called interactively, toggle the
+`Tempel-Abbrev mode' mode.  If the prefix argument is positive, enable
+the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable the
+mode if ARG is nil, omitted, or is a positive number.  Disable the mode
+if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate the variable `tempel-abbrev-mode'.
+
+The mode's hook is called both when the mode is enabled and when it is
+disabled.
+
+(fn &optional ARG)" t) (put 'global-tempel-abbrev-mode 'globalized-minor-mode t) (defvar global-tempel-abbrev-mode nil "Non-nil if Global Tempel-Abbrev mode is enabled.
+See the `global-tempel-abbrev-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-tempel-abbrev-mode'.") (custom-autoload 'global-tempel-abbrev-mode "tempel" nil) (autoload 'global-tempel-abbrev-mode "tempel" "Toggle Tempel-Abbrev mode in all buffers.
+With prefix ARG, enable Global Tempel-Abbrev mode if ARG is positive;
+otherwise, disable it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Tempel-Abbrev mode is enabled in all buffers where `tempel--abbrev-on'
+would do it.
+
+See `tempel-abbrev-mode' for more information on Tempel-Abbrev mode.
+
+(fn &optional ARG)" t) (register-definition-prefixes "tempel" '("tempel-")) (provide 'tempel-autoloads)) "tempel-collection" ((tempel-collection-autoloads tempel-collection) (autoload 'tempel-collection "tempel-collection" "Template loader.") (with-eval-after-load 'tempel (add-to-list 'tempel-template-sources 'tempel-collection 'append)) (register-definition-prefixes "tempel-collection" '("tempel-collection--")) (provide 'tempel-collection-autoloads))))
+
+#s(hash-table test eq data (org-elpa #s(hash-table test equal data (version 15 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "general" nil "cl-lib" nil "rainbow-delimiters" nil "rainbow-mode" nil "spacious-padding" nil "org-modern" nil "compat" nil "seq" nil "corfu" nil "gdscript-mode" nil "vertico" nil "savehist" nil "marginalia" nil "magit" nil "dash" nil "magit-section" nil "transient" nil "with-editor" nil "forge" nil "closql" nil "emacsql" nil "ghub" nil "let-alist" nil "treepy" nil "markdown-mode" nil "yaml" nil "denote" nil "org-superstar" nil "org" (org :type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*"))) "visual-fill-column" nil "langtool" nil "flycheck" nil "flycheck-grammarly" nil "grammarly" nil "s" nil "request" nil "websocket" nil "org-modern-indent" nil "auto-themer" nil "autothemer" nil "yasnippets" nil "yasnippet-snippets" nil "yasnippet" nil "yasnippet-capf" nil "tempel" nil "tempel-collection" nil)) melpa #s(hash-table test equal data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "general" (general :type git :flavor melpa :host github :repo "noctuid/general.el") "cl-lib" nil "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "rainbow-mode" nil "spacious-padding" nil "org-modern" (org-modern :type git :flavor melpa :host github :repo "minad/org-modern") "compat" nil "seq" nil "corfu" (corfu :type git :flavor melpa :files (:defaults "extensions/corfu-*.el" "corfu-pkg.el") :host github :repo "minad/corfu") "gdscript-mode" (gdscript-mode :type git :flavor melpa :host github :repo "godotengine/emacs-gdscript-mode") "vertico" (vertico :type git :flavor melpa :files (:defaults "extensions/vertico-*.el" "vertico-pkg.el") :host github :repo "minad/vertico") "savehist" nil "marginalia" (marginalia :type git :flavor melpa :host github :repo "minad/marginalia") "magit" (magit :type git :flavor melpa :files ("lisp/magit*.el" "lisp/git-*.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "magit-pkg.el" (:exclude "lisp/magit-section.el") "magit-pkg.el") :host github :repo "magit/magit") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "magit-section" (magit-section :type git :flavor melpa :files ("lisp/magit-section.el" "docs/magit-section.texi" "magit-section-pkg.el" "magit-section-pkg.el") :host github :repo "magit/magit") "transient" (transient :type git :flavor melpa :host github :repo "magit/transient") "with-editor" (with-editor :type git :flavor melpa :host github :repo "magit/with-editor") "forge" (forge :type git :flavor melpa :host github :repo "magit/forge") "closql" (closql :type git :flavor melpa :host github :repo "magit/closql") "emacsql" (emacsql :type git :flavor melpa :files (:defaults "README.md" "sqlite" "emacsql-pkg.el") :host github :repo "magit/emacsql") "ghub" (ghub :type git :flavor melpa :host github :repo "magit/ghub") "let-alist" nil "treepy" (treepy :type git :flavor melpa :host github :repo "volrath/treepy.el") "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "yaml" (yaml :type git :flavor melpa :host github :repo "zkry/yaml.el") "denote" nil "org-superstar" (org-superstar :type git :flavor melpa :host github :repo "integral-dw/org-superstar-mode") "visual-fill-column" (visual-fill-column :type git :flavor melpa :host codeberg :repo "joostkremers/visual-fill-column") "langtool" (langtool :type git :flavor melpa :files ("langtool.el" "langtool-pkg.el") :host github :repo "mhayashi1120/Emacs-langtool") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "flycheck-grammarly" (flycheck-grammarly :type git :flavor melpa :host github :repo "emacs-grammarly/flycheck-grammarly") "grammarly" (grammarly :type git :flavor melpa :host github :repo "emacs-grammarly/grammarly") "s" (s :type git :flavor melpa :host github :repo "magnars/s.el") "request" (request :type git :flavor melpa :files ("request.el" "request-pkg.el") :host github :repo "tkf/emacs-request") "websocket" (websocket :type git :flavor melpa :host github :repo "ahyatt/emacs-websocket") "org-modern-indent" nil "auto-themer" nil "autothemer" (autothemer :type git :flavor melpa :host github :repo "jasonm23/autothemer") "yasnippets" nil "yasnippet-snippets" (yasnippet-snippets :type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets") "yasnippet" (yasnippet :type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet") "yasnippet-capf" (yasnippet-capf :type git :flavor melpa :host github :repo "elken/yasnippet-capf") "tempel" (tempel :type git :flavor melpa :host github :repo "minad/tempel") "tempel-collection" (tempel-collection :type git :flavor melpa :files (:defaults "templates" "tempel-collection-pkg.el") :host github :repo "Crandel/tempel-collection"))) gnu-elpa-mirror #s(hash-table test equal data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "rainbow-mode" (rainbow-mode :type git :host github :repo "emacs-straight/rainbow-mode" :files ("*" (:exclude ".git"))) "spacious-padding" (spacious-padding :type git :host github :repo "emacs-straight/spacious-padding" :files ("*" (:exclude ".git"))) "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "seq" (seq :type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git"))) "savehist" nil "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "denote" (denote :type git :host github :repo "emacs-straight/denote" :files ("*" (:exclude ".git"))) "org-modern-indent" nil "auto-themer" nil "yasnippets" nil)) nongnu-elpa #s(hash-table test equal data (version 4 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "org-modern-indent" nil "auto-themer" nil "yasnippets" nil)) el-get #s(hash-table test equal data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "org-modern-indent" nil "auto-themer" nil "yasnippets" `(yasnippets :type git :host github :repo "rejeep/yasnippets" :files (:defaults)))) emacsmirror-mirror #s(hash-table test equal data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "savehist" nil "org-modern-indent" nil "auto-themer" nil))))
+
+("tempel-collection" "tempel" "autothemer" "websocket" "request" "s" "grammarly" "flycheck-grammarly" "flycheck" "visual-fill-column" "org" "org-modern-indent" "yaml" "markdown-mode" "treepy" "let-alist" "ghub" "emacsql" "closql" "forge" "with-editor" "transient" "magit-section" "dash" "magit" "marginalia" "vertico" "gdscript-mode" "corfu" "seq" "compat" "org-modern" "spacious-padding" "rainbow-mode" "rainbow-delimiters" "cl-lib" "general" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
 
 t

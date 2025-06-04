@@ -43,27 +43,18 @@ $grey11:       #292e42;
 
 .bar-box {
     background-color: $grey5;
-    border-width: 4px;
     border-style: solid;
-    border-color: $grey0;
-    border-radius: 25px;
+    border-width: 3px;
+    border-color: $teal0;
+    border-radius: 20px;
 }
 
 .text-datetime {
     color: $blue3;
-    font-weight: bolder;
+    font-size: 12px;
 }
 
 .text-main {
     color: $purple;
-    font-weight: bolder;
     font-size: 12px;
-}
-
-.icons {
-    margin: 8px;
-}
-
-.box-spacer {
-    margin: 2px 1px;
 }

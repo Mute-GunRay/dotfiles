@@ -1,1 +1,0 @@
-/home/V/.emacs.d/straight/repos/denote/denote-org-extras.el

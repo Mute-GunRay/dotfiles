@@ -1,12 +1,50 @@
-(defpoll time :interval "1s" "date  '+%T'")
-(defpoll date :interval "1s" "date '+%d-%m-%y'")
+;;TODO: refactor right bar to hold time, date, and weather
+;;TODO: replace all icons with ones from new set
+;;TODO: add padding around icons
+;;TODO: create center bar including listeners and script (for reminders)
+;;TODO: create tray bar for wifi, bluetooth, and power button (should be placed to the right but seperate from the time bar)
+;;TODO: extract windows and relevent variables and widgets into their own files (will have to get rid of icon widget possibly)
+;;TODO: create media player bar
+;;TODO: attempt to move away from magic variables and replace with scripts
+;;TODO: turn wifi and bluetooth icons into buttons for toggling power
+;;TODO: create workspace bar and script for dynamic workspace creation
+;;TODO: turn weather widget into an on hover to show the temp
 
-(defwindow date-time-bar
+(defpoll day               :interval "1440m" "sh ./scripts/time -d")
+(defpoll month             :interval "1440m" "sh ./scripts/time -m")
+(defpoll year              :interval "1440m" "sh ./scripts/time -y")
+(defpoll hour              :interval "60s" "sh ./scripts/time -h")
+(defpoll minute            :interval "60s" "sh ./scripts/time -M")
+(defpoll second            :interval "1s" "sh ./scripts/time -S")
+(defpoll day-night         :interval "60s" "sh ./scripts/time -s")
+(defpoll weather-temp      :interval "30m" "sh ./scripts/weather -t")
+(defpoll weather-condition :interval "30m" " sh ./scripts/weather -c")
+
+(defwindow time-bar
     :monitor 0 
     :geometry (geometry :x "-0.5%"
 			:y "1%"
-			:width "11.5%"
-			:height "5%"
+			:width "5.5%"
+			:height "3%"
+			:anchor "top right")
+    :stacking "bg"
+    :reserve (struts :distance "5%"
+		      :side "top")
+    :wm-ignore false
+    (time))
+
+(defwidget time []
+  (box :halign "center"
+       :space-evenly "false"
+       (label :class "text-datetime"
+	      :text "${hour}:${minute}:${second}")))
+
+(defwindow date-bar
+    :monitor 0 
+    :geometry (geometry :x "-0.75%"
+			:y "0.75%"
+			:width "7%"
+			:height "3.5%"
 			:anchor "top right")
     :stacking "bg"
     :reserve (struts :distance "5%"
@@ -15,33 +53,22 @@
     (date-time))
 
 (defwidget date-time []
-  (box :orientation "horizontal"
-       :class "bar-box"
-       :space-evenly "false"
-       (date)
-       (time)))
+    (box :class "bar-box"
+	 (date)
+	 (time)))
 
 (defwidget date []
-  (box :orientation "horizontal"
+  (box :halign "center"
        :space-evenly "false"
-       :class "box-spacer"
-       (icon :name "calendar_icon")
-       (label :class "text-main"
-	      :text "${date}")))
-(defwidget time []
-  (box :orientation "horizontal"
-       :space-evenly "false"
-       :class "box-spacer"
-       (icon :name "hourglass_icon")
-       (label :class "text-main"
-	      :text "${time}")))
+       (label :class "text-datetime"
+	      :text "${day}-${month}-${year}")))
 	
-(defwindow sysmon-bar
+(defwindow system-bar
     :monitor 0
     :geometry (geometry :x "-13%"
-			:y "1%"
-			:width "13%"
-			:height "3%"
+			:y "0.75%"
+			:width "11%"
+			:height "3.5%"
 			:anchor "top right")
     :stacking "bg"
     :reserve (struts :distance "5%"
@@ -50,36 +77,89 @@
     (sysmon))
 
 (defwidget sysmon []
+  (box :class "bar-box"
+       (cpu-perc)
+       (ram-perc)
+       (cpu-temp)))
+
+(defwidget cpu-perc []
   (box :orientation "horizontal"
-       :class "bar-box"
+       :halign "center"
        :space-evenly "false"
-       (sysmon-cpu)
-       (sysmon-ram)
-       (sysmon-temp)))
-
-(defwidget sysmon-cpu []
-  (box :space-evenly "false"
-       :class "box-spacer"
-       (icon :name "cpu_icon")
+       (icon :location "utilities"
+	     :name "cpu")
        (label :class "text-main"
-	      :text "${round(EWW_CPU['avg'], 2)}%")))
+	      :text "${round(EWW_CPU["avg"], 2)}%")))
 
-(defwidget sysmon-ram []
-  (box :space-evenly "false"
-       :class "box-spacer"
-       (icon :name "ram_icon")
-       (label :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
+(defwidget ram-perc []
+  (box :halign "center"
+       :space-evenly "false"
+       (icon :location "utilities"
+	     :name "ram")
+       (label :text "${round(EWW_RAM["used_mem_perc"], 2)}%"
 	      :class "text-main")))
 
-(defwidget sysmon-temp []
-  (box :space-evenly "false"
-       :class "box-spacer"
-       (icon :name "therm_icon")
+(defwidget cpu-temp []
+  (box :halign "center"
+       :space-evenly "false"
+       (icon :location "utilities"
+	     :name "thermometer")
        (label :class "text-main"
 	      :text "${round(EWW_TEMPS['K10TEMP_TCCD1'], 2)}℃")))
 
-(defwidget icon [name]
-  (image :path "icons/${name}.png"
+(defwidget icon [location name]
+  (image :path "icons/${location}/${name}.png"
 	 :class "icons"
-	 :image-width 25
-	 :image-height 25))
+	 :image-width 16
+	 :image-height 16))
+
+(defwindow weather-bar
+    :monitor 0
+    :geometry (geometry :x "1%"
+			:y "1%"
+			:width "5%"
+			:height "3.5%"
+			:anchor "top left")
+    :stacking "bg"
+    :reserve (struts :distance "5%"
+		     :side "top")
+    :wm-ignore false
+    (weather))
+
+(defwidget weather []
+  (box :space-evenly "false"
+       :class "bar-box"
+       (icon :location "weather"
+	     :name "${weather-condition}")
+       (label :class "text-main"
+	      :text "${weather-temp}")))
+(defwindow tray-bar
+    :monitor 0 
+    :geometry (geometry :x "-0.5%"
+			:y "1%"
+			:width "5.5%"
+			:height "3%"
+			:anchor "top right")
+    :stacking "bg"
+    :reserve (struts :distance "5%"
+		      :side "top")
+    :wm-ignore false
+    (tray))
+
+(defwidget tray []
+  (box :class "bar-bow"
+       (bluetooth)
+       (wifi)
+       (power)))
+
+(defwidget bluetooth []
+    (icon :location "utilities"
+	  :name "bluetooth"))
+
+(defwidget wifi []
+    (icon :location "utilities"
+	  :name "wifi_icon"))
+
+(defwidget power []
+    (icon :location "utilities"
+	  :name "audio_icon"))
